@@ -9,8 +9,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Doesn't require substrate, but can be attached to decor",
-        image="",
-        filtration=""
+        image="./static/java_moss.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Anubias Nana Petite",
@@ -20,8 +20,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Can be attached to decor or planted in substrate",
-        image="",
-        filtration=""
+        image="./static/anubias_nana_petite.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Java Fern",
@@ -31,8 +31,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Doesn't require substrate, but can be attached to decor",
-        image="",
-        filtration=""
+        image="./static/java_fern.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Amazon Sword",
@@ -42,8 +42,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/amazon_sword.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Wendtii",
@@ -53,8 +53,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_wendtii.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Water Wisteria",
@@ -64,8 +64,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/water_wisteria.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Dwarf Sagittaria",
@@ -75,8 +75,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/dwarf_sagittaria.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Hornwort",
@@ -86,8 +86,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Doesn't require substrate, can be left to float or anchored",
-        image="",
-        filtration=""
+        image="./static/hornwort.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Italian Vallisneria",
@@ -97,8 +97,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/vall_spiralis.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Dwarf Hairgrass",
@@ -108,8 +108,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/dwarf_hairgrass.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Ludwigia Repens",
@@ -119,8 +119,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/ludwigia_repens.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Rotala Rotundifolia",
@@ -130,8 +130,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/rotala-rotundifolia.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Water Sprite",
@@ -141,8 +141,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Doesn't require substrate, but can be planted in substrate",
-        image="",
-        filtration=""
+        image="./static/water_sprite.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Amazon Frogbit",
@@ -152,8 +152,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Floating plant",
-        image="",
-        filtration=""
+        image="./static/amazon_frogbit.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Parva",
@@ -163,8 +163,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_parva.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Balansae",
@@ -174,8 +174,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_balansae.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Duckweed",
@@ -185,8 +185,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Floating plant",
-        image="",
-        filtration=""
+        image="./static/duckweed.jpg",
+        filtration=1
     ),
     Plant(
         common_name="Monte Carlo",
@@ -196,8 +196,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/monte_carlo.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Christmas Moss",
@@ -207,8 +207,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Can be attached to decor or carpeted",
-        image="",
-        filtration=""
+        image="./static/christmas_moss.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Staurogyne Repens",
@@ -218,8 +218,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/staurogyne_repens.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Flame Moss",
@@ -229,8 +229,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Low to moderate",
         substrate="Can be attached to decor",
-        image="",
-        filtration=""
+        image="./static/flame_moss.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Dwarf Baby Tears",
@@ -240,19 +240,8 @@ plantseed = [
         care_level="Difficult",
         lighting_needs="High",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
-    ),
-    Plant(
-        common_name="Bucephalandra",
-        scientific_name="Bucephalandra sp.",
-        bio="Bucephalandra is a genus of aquatic plants native to Borneo, where they grow submerged along riverbanks and streams. These plants are highly prized by aquarists for their unique and often colorful foliage, making them a popular choice for aquascaping. Bucephalandra species vary widely in appearance, with leaves ranging from broad and lance-shaped to narrow and ruffled, and colors ranging from green to red to purple. They are typically slow-growing and prefer low to moderate lighting, although some species may benefit from higher light levels. Bucephalandra can be attached to decor such as driftwood or rocks, or planted directly into substrate. Propagation is typically done by dividing the rhizome or by separating daughter plants from the main cluster. Bucephalandra adds a touch of elegance and diversity to freshwater aquariums, making them a favorite among hobbyists.",
-        origin="Borneo",
-        care_level="Moderate",
-        lighting_needs="Low to moderate",
-        substrate="Can be attached to decor or planted in substrate",
-        image="",
-        filtration=""
+        image="./static/dwarf_baby_tears.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Alternanthera Reineckii",
@@ -262,8 +251,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/alter_reineckii.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Lutea",
@@ -273,8 +262,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_lutea.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Undulata",
@@ -284,8 +273,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_undulata.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Lucens",
@@ -295,8 +284,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_lucens.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Giant Hygro",
@@ -306,8 +295,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/giant_hygro.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Red Tiger Lotus",
@@ -317,8 +306,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/red_tiger_lotus.jpg",
+        filtration=1
     ),
     Plant(
         common_name="Brazilian Pennywort",
@@ -328,8 +317,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/brazilian_pennywort.jpeg",
+        filtration=1
     ),  
     Plant(
         common_name="Dwarf Lily",
@@ -339,8 +328,8 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/dwarf_lilly.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Cryptocoryne Spiralis",
@@ -350,8 +339,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/crypt_spiralis.jpeg",
+        filtration=1
     ),
     Plant(
         common_name="Amazon Compacta Sword",
@@ -361,11 +350,8 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="",
-        filtration=""
+        image="./static/amazon_compacta.jpeg",
+        filtration=1
     ),
-
-
-    
-
 ]
+

@@ -8,10 +8,31 @@ from faker import Faker
 
 # Local imports
 from app import app
-from models import db
+from models import db, Plant, FreshwaterFish
+from seeddata import plantseeds, fishseeds
+
+plantsToSeed = plantseeds.plantseed
+fishToSeed = fishseeds.fishseed
+
 
 if __name__ == '__main__':
     fake = Faker()
     with app.app_context():
         print("Starting seed...")
-        # Seed code goes here!
+        print("Deleting current data - Plants - Fish")
+        Plant.query.delete()
+        FreshwaterFish.query.delete()
+
+
+        print("Seeing Plants")
+        db.session.add_all(plantsToSeed)
+        db.session.commit()
+
+        print("Seeding FreshwaterFish")
+        db.session.add_all(fishToSeed)
+        db.session.commit()
+
+        print()
+
+
+
