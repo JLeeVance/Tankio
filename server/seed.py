@@ -9,10 +9,11 @@ from faker import Faker
 # Local imports
 from app import app
 from models import db, Plant, FreshwaterFish
-from seeddata import plantseeds, fishseeds
+from seeddata import plantseeds, fishseeds, tankseeds
 
 plantsToSeed = plantseeds.plantseed
 fishToSeed = fishseeds.fishseed
+tanksToSeed = tankseeds.tankseed
 
 
 if __name__ == '__main__':
@@ -23,7 +24,6 @@ if __name__ == '__main__':
         Plant.query.delete()
         FreshwaterFish.query.delete()
 
-
         print("Seeing Plants")
         db.session.add_all(plantsToSeed)
         db.session.commit()
@@ -32,7 +32,9 @@ if __name__ == '__main__':
         db.session.add_all(fishToSeed)
         db.session.commit()
 
-        print()
+        print("Seeding Tanks")
+        db.session.add_all(tanksToSeed)
+        db.session.commit()
 
 
 
