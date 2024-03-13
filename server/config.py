@@ -1,5 +1,6 @@
 # Standard library imports
 
+
 # Remote library imports
 from flask import Flask
 from flask_cors import CORS
@@ -20,6 +21,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 app.secret_key = 'b\xda\x1cg\xb4O\xda\xb8\xba\x80\xa4\xbd\x16\x94\xad\x16\xe3'
 
+
 # Define metadata, instantiate db
 convention = {
     "ix": "ix_%(column_0_label)s",
@@ -28,6 +30,7 @@ convention = {
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
     "pk": "pk_%(table_name)s"
 }
+
 metadata = MetaData(naming_convention=convention)
 db = SQLAlchemy(metadata=metadata)
 migrate = Migrate(app, db)

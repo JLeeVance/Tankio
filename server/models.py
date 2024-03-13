@@ -53,6 +53,9 @@ class FreshwaterFish(db.Model, SerializerMixin):
         return f'<Fish {self.common_name} | {self.origin} | {self.bioload}'
 
 
+''' up: Static Tables '''
+
+
 class User(db.Model, SerializerMixin):
 
     __tablename__ = 'users'
@@ -120,7 +123,14 @@ class OwnedPlants(db.Model, SerializerMixin):
     plant = db.relationship(Plant, back_populates = 'ownedplants')
     user = db.relationship(User, back_populates = 'ownedplants')
 
-    serialize_rules = ('-plant.ownedplants', '-user.ownedplants',)
+    serialize_rules = (
+        '-plant.ownedplants', 
+        '-user.ownedplants',
+        '-plant.bio',
+        '-user._password_hash',
+        '-user.bio',
+        '-user.ownedfishes',
+        )
 
     def __repr__(self):
         return f'<OwnedPlant | {self.plant_id} | {self.user_id}'
