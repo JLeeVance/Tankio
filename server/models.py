@@ -105,7 +105,8 @@ class User(db.Model, SerializerMixin):
             return ValueError('Your first and last name must be between 2 and 20 characters long')
         else:
             return value
-        
+    
+    serialize_rules = ('-_password_hash', '-password_hash',)
     
     def __repr__(self):
         return f'<User {self.username} | {self.first_name}'
@@ -127,7 +128,6 @@ class OwnedPlants(db.Model, SerializerMixin):
         '-plant.ownedplants', 
         '-user.ownedplants',
         '-plant.bio',
-        '-user._password_hash',
         '-user.bio',
         '-user.ownedfishes',
         )
@@ -147,7 +147,13 @@ class OwnedFish(db.Model, SerializerMixin):
     fish = db.relationship(FreshwaterFish, back_populates = 'ownedfishes')
     user = db.relationship(User, back_populates = 'ownedfishes')
 
-    serialize_rules = ('-fish.ownedfishes', '-user.ownedfishes',)
+    serialize_rules = (
+        '-fish.ownedfishes', 
+        '-fish.bio',
+        '-user.ownedfishes',
+        '-user.bio',
+        '-user.ownedplants'
+        )
 
 
 

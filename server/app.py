@@ -69,6 +69,18 @@ class OwnedPlant(Resource):
     
 api.add_resource(OwnedPlant, '/owned_plants')
 
+class OwnedFishes(Resource):
+
+    def get(self):
+        owned = [owned.to_dict() for owned in OwnedFish.query.all()]
+
+        if not owned:
+            return make_response({'error':'We could not find any OwnedFish'})
+        
+        return make_response(owned, 200)
+    
+api.add_resource(OwnedFishes, '/owned_fish')
+
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
