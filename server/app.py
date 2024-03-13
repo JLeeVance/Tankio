@@ -29,20 +29,42 @@ allowed_endpoints = ['signup', 'login', 'check_session']
 class Users(Resource):
 
     def get(self):
-        pass
+        users = [user.to_dict() for user in User.query.all()]
+
+        return make_response(users, 200)
 
 api.add_resource(Users, '/users')
 
 class UsersById(Resource):
 
     def get(self, id):
-        pass
+        user = User.query.filter(User.id == id).first()
+        if not user:
+            return make_response({'error':'No User found by the given Id'})
+        
+        return make_response(user.to_dict(), 200)
 
     def patch(self, id):
-        pass
+        user = User.query.filter(User.id == id).first()
+        if not user:
+            return make_response({'error':'No User found by the given Id'})
+        try:
+            patch_data = request.get_json()
+            for key, value in patch_data.items():
+                setattr(user, key, value)
+            
+            db.session.commit()
+            return make_response(user.to_dict(), 202)
+        except Exception as e:
+            return make_response({'errors':[str(e)]}, 400)
 
     def delete(self, id):
-        pass
+        user = User.query.filter(User.id == id).first()
+        if not user:
+            return make_response({'error':'No User found by the given Id'})
+        
+        db.session.delete(user)
+        return make_response({}, 204)
 
 api.add_resource(UsersById, '/users/<int:id>')
 
@@ -56,7 +78,6 @@ class Fish(Resource):
         return make_response(fishes,  200)
 
 api.add_resource(Fish, '/freshwater_fish')
-
 
 
 class FishById(Resource):
@@ -111,7 +132,7 @@ class OwnedPlant(Resource):
     def post(self):
         json_data = request.get_json()
         try:
-            new_owned = OwnedFish()
+            new_owned = OwnedPlants()
             new_owned.user_id = json_data['user_id']
             new_owned.plant_id = json_data['plant_id']
             db.session.add(new_owned)
@@ -119,7 +140,7 @@ class OwnedPlant(Resource):
             
             return make_response(new_owned.to_dict(), 201)
         except Exception as e:
-            return make_response([str(e)], 422)
+            return make_response({'errors':[str(e)]}, 422)
               
 api.add_resource(OwnedPlant, '/owned_plants')
 
