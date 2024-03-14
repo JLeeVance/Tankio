@@ -206,7 +206,7 @@ class OwnedFishesById(Resource):
         
         return make_response(owned.to_dict(), 200)
 
-    def delete(self):
+    def delete(self, id):
         owned = OwnedFish.query.filter(OwnedFish.id == id).first()
 
         if not owned:

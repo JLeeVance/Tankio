@@ -1,36 +1,77 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Routes, Route } from "react-router-dom";
+import AccessContainer from './login_signup files/access_container.js'
+import Header from "./header.js";
+import LogInHome from './login_signup files/login_home.js'
 
 function App() {
 
+  // useEffect(() => {
+  //   fetch('/freshwater_fish')
+  //   .then(r => r.json())
+  //   .then(fish => setFish(fish))
+  // }, [])
+
+  // useEffect(() => {
+  //   fetch('/plants')
+  //   .then(r => r.json())
+  //   .then(plants => setAllPlants(plants))
+  // }, [])
+
+  // const [ fish , setFish ] = useState([])
+  // const [ allPlants, setAllPlants ] = useState([])
+
+  const [ user , setUser ] = useState(null)
+
+
   useEffect(() => {
-    fetch('/freshwater_fish')
-    .then(r => r.json())
-    .then(fish => setFish(fish))
+    fetch('/check_session')
+    .then(r => {
+      if (r.ok){
+        r.json().then(user => setUser(user))
+      }
+      else {
+        setUser(null)
+      }
+    })
   }, [])
+  
+  if (!user){
+    return (
+      <>
+        <Header />
+        <LogInHome />
+      </>
+    )
+  }
+  else {
+    return (
+      <>
+      </>
+    )
+  }
 
-  useEffect(() => {
-    fetch('/plants')
-    .then(r => r.json())
-    .then(plants => setAllPlants(plants))
-  }, [])
-
-  const [ fish , setFish ] = useState([])
-  const [ allPlants, setAllPlants ] = useState([])
-
-  const imgs = fish.map(fish =>  <img style={{width:100}} src={fish.image}/>)
-  const imgs2 = allPlants.map(plant => <img style={{width:100}} src={plant.image} />)
 
 
 
 
-  return (
-    <>
-      {imgs}
-      {imgs2}
-    </>
 
-  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
