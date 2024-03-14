@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Box } from '@mui/material';
 
 function SiteInfo(){
 
@@ -10,6 +10,9 @@ function SiteInfo(){
         <Container>
             <Typography variant='h4'>
                 {welcome}
+            </Typography>
+            <Typography variant='subtitle1'>
+                {desc}
             </Typography>
         </Container>
     )

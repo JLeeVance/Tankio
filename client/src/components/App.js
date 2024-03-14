@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Routes, Route } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import Header from "./header.js";
-import LogInHome from './login_signup files/login_home.js'
+import LogInHome from './login_signup files/login_home.js';
+import Home from './home/home.js';
+import Plants from "./plants/plants.js";
+import FreshwaterFish from "./freshwater_fish/freshwater_fish.js";
+import PlantByID from "./plant_by_id/plant_by_id.js";
+import FishByID from "./fish_by_id/fish_by_id.js";
+import TankTester from "./tank_tester/tank_tester.js";
+
+
 
 function App() {
 
@@ -21,7 +29,6 @@ function App() {
   // const [ allPlants, setAllPlants ] = useState([])
 
   const [ user , setUser ] = useState(null)
-
 
   useEffect(() => {
     fetch('/check_session')
@@ -46,32 +53,18 @@ function App() {
   else {
     return (
       <>
+        <Header />
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/plants' element={<Plants />} />
+            <Route path='/plants/:id' element={<PlantByID  />} />
+            <Route path='/freshwater_fish' element={<FreshwaterFish />} />
+            <Route path='/freshwater_fish/:id' element={<FishByID  />} />
+            <Route path='/tanktester' element={<TankTester  />}  />
+        </Routes>
       </>
     )
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 export default App;
