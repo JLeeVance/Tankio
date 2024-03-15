@@ -1,23 +1,25 @@
 import { useState } from 'react';
+import { Container } from '@mui/material';
+import Login from './login.js'
+import Signup from './signup.js'
 
-function AccessContainer(){
+function AccessContainer({ updateUser }){
 
     const [ hasAccount , setHasAccount ] = useState(true)
 
-    if(hasAccount){
-        return(
-            <>
-                <h1>Login</h1>
-            </>
-        )
-    }
-    else{
-        return(
-            <>
-                <h1>SignUp</h1>
-            </>
-        )
-    } 
+    return(
+        <Container>
+            {hasAccount ?
+                <Login 
+                    updateUser={updateUser}
+                    setHasAccount={setHasAccount}/> 
+                :
+                <Signup 
+                    updateUser={updateUser}
+                    setHasAccount={setHasAccount}/>
+        }
+        </Container>
+    )
 
 
 }

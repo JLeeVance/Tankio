@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import SiteInfo from './site_info'
 import AccessContainer from './access_container'
 
-function LogInHome(){
+function LogInHome({ updateUser }){
 
     return (
         <Grid container>
@@ -10,7 +10,7 @@ function LogInHome(){
                 <SiteInfo />
             </Grid>
             <Grid item xs={6} textAlign={'center'}>
-                <AccessContainer xs={6}/>
+                <AccessContainer xs={6} updateUser={updateUser}/>
             </Grid>
         </Grid>
     )
