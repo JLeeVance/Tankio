@@ -6,12 +6,28 @@ import {
     Button,
     Typography
 } from '@mui/material'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export function DataCard({ common, scientific, image , type, id }){
+export function DataCard({ 
+    common, 
+    scientific, 
+    image,
+    type,
+    id,
+    ownedIds,
+    addOwned,
+    removeOwned
+}){
 
+    const [ isOwned , setIsOwned ] = useState(ownedIds.includes(id))
     const nav = useNavigate()
 
+    function handleAddClick(){
+        addOwned(id, common)
+        setIsOwned(!isOwned)
+    }
+    
     function handleLearnClick(){
         if (type === 'fish'){
             nav(`/freshwater_fish/${id}`)
@@ -19,6 +35,11 @@ export function DataCard({ common, scientific, image , type, id }){
         else if (type === 'plant'){
             nav(`/plants/${id}`)
         }
+    }
+
+    function handleDeleteClick(){
+        removeOwned(id, common)
+        setIsOwned(!isOwned)
     }
 
     return (
@@ -37,6 +58,7 @@ export function DataCard({ common, scientific, image , type, id }){
                 </Typography>
                 <CardActions>
                     <Button size='small' onClick={handleLearnClick}>Learn More</Button>
+                    <Button size='medium' onClick={isOwned ? handleDeleteClick : handleAddClick} >{isOwned ? 'Remove from owned' : 'Add to owned'}</Button>
                 </CardActions>
             </CardContent>
         </Card>

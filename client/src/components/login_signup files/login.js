@@ -58,10 +58,8 @@ function Login({ updateUser , setHasAccount  }){
     return(
         <FormControl
             component={'form'}
-            alignContent={'center'}
             display={'block'}
             height={'100%'}
-            backgroundColor={'grey'}
             autoComplete='off'
             onSubmit={formik.handleSubmit}
             >

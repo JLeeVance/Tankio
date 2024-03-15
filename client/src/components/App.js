@@ -27,6 +27,8 @@ function App() {
       if (r.ok){
         r.json().then(user => { 
           setUser(user)
+          setOwnedFish(user.ownedfishes)
+          setOwnedPlants(user.ownedplants)
           })
       }
       else {
@@ -47,8 +49,9 @@ function App() {
       </>
     )
   } else {
-    setOwnedPlants(user.ownedplants)
-    setOwnedFish(user.ownedfishes)
+    console.log(user.ownedfishes)
+    // setOwnedPlants(user.ownedplants)
+    // setOwnedFish(user.ownedfishes)
     return (
       <>
         <Header />
