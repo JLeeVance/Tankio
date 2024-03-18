@@ -73,6 +73,9 @@ class User(db.Model, SerializerMixin):
     ownedplants = db.relationship('OwnedPlants', back_populates = 'user' , cascade = 'all, delete')
     ownedfishes = db.relationship('OwnedFish', back_populates = 'user', cascade = 'all, delete')
 
+    plants = association_proxy('ownedplants', 'plant')
+    fish = association_proxy('ownedfishes', 'fish')
+
     serialize_rules = ('-ownedplants.user', '-ownedfishes.user',)
 
     @hybrid_property

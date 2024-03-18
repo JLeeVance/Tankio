@@ -5,7 +5,9 @@ import { UserContext } from "../../context/user.js"
 import { 
     Container,
     Typography,
-    Snackbar } from '@mui/material'
+    Snackbar, 
+    Grid
+} from '@mui/material'
 
 function Plants(){
 
@@ -66,38 +68,41 @@ function Plants(){
             }
         })
     }
-
    
-    const dataCards = allPlants.map(plant => <DataCard
-        key={plant.id}
-        image={plant.image}
-        common={plant.common_name}
-        scientific={plant.scientific_name}
-        id={plant.id}
-        ownedIds={ownedPlantIds}
-        type={type}
-        addOwned={addOwnedPlant}
-        removeOwned={deleteOwnedPlant}
-        />)
+    const dataCards = allPlants.map(plant => {
+        return (
+            <Grid item xs={3} key={plant.id} >
+                <DataCard
+                    image={plant.image}
+                    common={plant.common_name}
+                    scientific={plant.scientific_name}
+                    id={plant.id}
+                    ownedIds={ownedPlantIds}
+                    type={type}
+                    addOwned={addOwnedPlant}
+                    removeOwned={deleteOwnedPlant}
+                    />
+            </Grid>
+        )
+    })
    
     return (
-            <Container>
-                <Snackbar
+        <Container maxWidth={'xl'}>
+            <Snackbar
                 open={openSnackBar}
                 autoHideDuration={2000}
                 onClose={handleSnackbarClose}
                 message={snackbarMessage}
                 anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-                />
-                <Container>
-                    <Typography variant='h3'>Aquatic Plants</Typography>
-                </Container>
-                <Container>
-                    {dataCards}
-                </Container>
+            />
+            <Container>
+                <Typography variant='h3' align="center" sx={{marginBottom:'2%'}}>Aquatic Plants</Typography>
             </Container>
+            <Grid container spacing={3} maxWidth={'auto'}>
+                {dataCards}
+            </Grid>
+        </Container>
         )
-    }
-
+}
 
 export default Plants

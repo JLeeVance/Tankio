@@ -10,7 +10,7 @@ fishseed = [
         max_size=3,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/betta.jpg"
+        image="/static/betta.jpg"
     ),
     FreshwaterFish(
         common_name="Neon tetra",
@@ -21,7 +21,7 @@ fishseed = [
         max_size=1.5,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/neon_tetra.jpg"
+        image="/static/neon_tetra.jpg"
     ),
     FreshwaterFish(
         common_name="Guppy",
@@ -32,7 +32,7 @@ fishseed = [
         max_size=2.5,  # Inches
         ph_range="7.0 - 8.0",
         bioload=1,
-        image="./static/guppy.jpg"
+        image="/static/guppy.jpg"
     ),
     FreshwaterFish(
         common_name="Goldfish",
@@ -43,7 +43,7 @@ fishseed = [
         max_size=12,  # Inches
         ph_range="6.0 - 8.0",
         bioload=1,
-        image="./static/goldfish.jpg"
+        image="/static/goldfish.jpg"
     ),
     FreshwaterFish(
         common_name="Angelfish",
@@ -54,7 +54,7 @@ fishseed = [
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/angelfish.jpg"
+        image="/static/angelfish.jpg"
     ),
     FreshwaterFish(
         common_name="Zebra danio",
@@ -65,7 +65,7 @@ fishseed = [
         max_size=2,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/zebra_danio.jpeg"
+        image="/static/zebra_danio.jpeg"
     ),
     FreshwaterFish(
         common_name="Platy",
@@ -76,7 +76,7 @@ fishseed = [
         max_size=2.5,  # Inches
         ph_range="7.0 - 8.0",
         bioload=1,
-        image="./static/platys.jpg"
+        image="/static/platys.jpg"
     ),
     FreshwaterFish(
         common_name="Swordtail",
@@ -87,7 +87,7 @@ fishseed = [
         max_size=4,  # Inches
         ph_range="7.0 - 8.0",
         bioload=1,
-        image="./static/swordtail.jpeg"
+        image="/static/swordtail.jpeg"
     ),
     FreshwaterFish(
         common_name="Discus fish",
@@ -98,7 +98,7 @@ fishseed = [
         max_size=8,  # Inches
         ph_range="6.0 - 7.0",
         bioload=1,
-        image="./static/discus.jpg"
+        image="/static/discus.jpg"
     ),
     FreshwaterFish(
         common_name="Cherry barb",
@@ -109,7 +109,7 @@ fishseed = [
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/cherry_barb.jpg"
+        image="/static/cherry_barb.jpg"
     ),
     FreshwaterFish(
         common_name="Tiger barb",
@@ -120,7 +120,7 @@ fishseed = [
         max_size=3,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/tiger_barb.jpeg"
+        image="/static/tiger_barb.jpeg"
     ),
     FreshwaterFish(
         common_name="Harlequin rasbora",
@@ -131,7 +131,7 @@ fishseed = [
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/harlequin_rasbora.jpeg"
+        image="/static/harlequin_rasbora.jpeg"
     ),
     FreshwaterFish(
         common_name="Kuhli loach",
@@ -142,7 +142,7 @@ fishseed = [
         max_size=4,  # Inches
         ph_range="6.0 - 7.0",
         bioload=1,
-        image="./static/kuhli_loach.jpg"
+        image="/static/kuhli_loach.jpg"
     ),
     FreshwaterFish(
         common_name="Rainbow fish",
@@ -153,7 +153,7 @@ fishseed = [
         max_size=5,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/rainbow_fish.jpeg"
+        image="/static/rainbow_fish.jpeg"
     ),
     FreshwaterFish(
         common_name="Clown loach",
@@ -164,7 +164,7 @@ fishseed = [
         max_size=12,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/clown_loach.jpeg"
+        image="/static/clown_loach.jpeg"
     ),      
     FreshwaterFish(
         common_name="Bristlenose pleco",
@@ -175,7 +175,7 @@ fishseed = [
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/bristlenose.jpeg"
+        image="/static/bristlenose.jpeg"
     ),
     FreshwaterFish(
         common_name="Pearl gourami",
@@ -186,7 +186,7 @@ fishseed = [
         max_size=5,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/pearl_gourami.jpg"
+        image="/static/pearl_gourami.jpg"
     ),
     FreshwaterFish(
         common_name="Rosy barb",
@@ -197,7 +197,7 @@ fishseed = [
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/rosy_barb.jpeg"
+        image="/static/rosy_barb.jpeg"
     ),
     FreshwaterFish(
         common_name="Green terror cichlid",
@@ -208,7 +208,7 @@ fishseed = [
         max_size=12,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/green_terror.jpeg"
+        image="/static/green_terror.jpeg"
     ),
     FreshwaterFish(
         common_name="White cloud mountain minnow",
@@ -219,7 +219,7 @@ fishseed = [
         max_size=1.5,  # Inches
         ph_range="6.0 - 8.0",
         bioload=1,
-        image="./static/cloud_minnow.jpeg"
+        image="/static/cloud_minnow.jpeg"
     ),
     FreshwaterFish(
         common_name="Panda Corydoras",
@@ -230,7 +230,7 @@ fishseed = [
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/panda_cory.jpeg"
+        image="/static/panda_cory.jpeg"
     ),
     FreshwaterFish(
         common_name="Dwarf gourami",
@@ -241,7 +241,7 @@ fishseed = [
         max_size=2.5,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/dwarf_gourami.jpeg"
+        image="/static/dwarf_gourami.jpeg"
     ),
     FreshwaterFish(
         common_name="African dwarf frog",
@@ -252,7 +252,7 @@ fishseed = [
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/dwarf_frog.jpeg"
+        image="/static/dwarf_frog.jpeg"
     ),
     FreshwaterFish(
         common_name="Glass catfish",
@@ -263,7 +263,7 @@ fishseed = [
         max_size=6,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/glass_cat.jpeg"
+        image="/static/glass_cat.jpeg"
     ),
     FreshwaterFish(
         common_name="Red-tailed shark",
@@ -274,7 +274,7 @@ fishseed = [
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
         bioload=1,
-        image="./static/redtail_shark.jpeg"
+        image="/static/redtail_shark.jpeg"
     ),
     FreshwaterFish(
         common_name="Rummy nose tetra",
@@ -285,7 +285,7 @@ fishseed = [
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/rummynose_tetra.jpeg"
+        image="/static/rummynose_tetra.jpeg"
     ),
     FreshwaterFish(
         common_name="Green neon tetra",
@@ -296,7 +296,7 @@ fishseed = [
         max_size=1.5,  # Inches
         ph_range="5.0 - 7.0",
         bioload=1,
-        image="./static/green_tetra.jpeg"
+        image="/static/green_tetra.jpeg"
     ),
     FreshwaterFish(
         common_name="Bolivian ram",
@@ -307,7 +307,7 @@ fishseed = [
         max_size=3,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/bolivian_ram.jpeg"
+        image="/static/bolivian_ram.jpeg"
     ),
     FreshwaterFish(
         common_name="Blue gourami",
@@ -318,7 +318,7 @@ fishseed = [
         max_size=6,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/blue_gourami.jpeg"
+        image="/static/blue_gourami.jpeg"
     ),
     FreshwaterFish(
         common_name="Lemon tetra",
@@ -329,6 +329,6 @@ fishseed = [
         max_size=1.5,  # Inches
         ph_range="6.0 - 7.5",
         bioload=1,
-        image="./static/lemon_tetra.jpeg"
+        image="/static/lemon_tetra.jpeg"
     ),
 ]

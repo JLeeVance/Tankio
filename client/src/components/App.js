@@ -49,9 +49,6 @@ function App() {
       </>
     )
   } else {
-    console.log(user.ownedfishes)
-    // setOwnedPlants(user.ownedplants)
-    // setOwnedFish(user.ownedfishes)
     return (
       <>
         <Header />

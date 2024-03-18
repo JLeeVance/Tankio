@@ -4,7 +4,8 @@ import {
     CardMedia,
     CardActions,
     Button,
-    Typography
+    Typography,
+    Box
 } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -43,22 +44,29 @@ export function DataCard({
     }
 
     return (
-        <Card sx={{maxWidth:350}}>
+        <Card>
             <CardMedia
-                sx={{height:250}}
+                sx={{height:300}}
                 image={image}
                 title={common}
             />
             <CardContent>
-                <Typography variant='h5' component='div'>
-                    {common}
-                </Typography>
-                <Typography variant='caption' >
+                <Box>
+                    <Typography
+                        variant='inherit' 
+                        component='div'
+                        align='left'
+                        fontSize={'x-large'}
+                        >
+                            {common}
+                    </Typography>
+                </Box>
+                <Typography variant='caption'>
                     {scientific}
                 </Typography>
                 <CardActions>
-                    <Button size='small' onClick={handleLearnClick}>Learn More</Button>
-                    <Button size='medium' onClick={isOwned ? handleDeleteClick : handleAddClick} >{isOwned ? 'Remove from owned' : 'Add to owned'}</Button>
+                    <Button variant='contained' onClick={handleLearnClick} sx={{fontSize:'small', bgcolor: 'lightgrey', '&:hover': { bgcolor: 'darkgrey' }}}  >Learn More</Button>
+                    <Button variant='contained' onClick={isOwned ? handleDeleteClick : handleAddClick} sx={{fontSize:'small', bgcolor: 'lightgrey', '&:hover': { bgcolor: 'darkgrey' }}}>{isOwned ? 'Remove from profile' : 'Add to profile'}</Button>
                 </CardActions>
             </CardContent>
         </Card>

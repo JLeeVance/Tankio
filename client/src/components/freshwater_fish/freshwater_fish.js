@@ -5,8 +5,9 @@ import { DataCard } from '../datacard'
 import { 
     Container, 
     Typography,
-    Snackbar } from '@mui/material'
-
+    Snackbar,
+    Grid
+} from '@mui/material'
 
 function FreshwaterFish(){
     
@@ -27,13 +28,11 @@ function FreshwaterFish(){
     const type = 'fish'
     const ownedFishIds = ownedFish.map((ownedFish) => ownedFish.fish_id)
 
-
     const handleSnackbarClose = () => {
         setOpenSnackBar(false)
     }
 
     const addOwnedFish = (fish_id, common) => {
-        // console.log('Before Add', ownedFish.length)
         const postData = {
             "fish_id":fish_id,
             "user_id":user.id
@@ -53,12 +52,11 @@ function FreshwaterFish(){
         } else {
             setSnackbarMessage('There was an error adding your profile')
             setOpenSnackBar(true)
-        }})}
-    // console.log('After Add', ownedFish.length)
-
+        }
+    })
+}
 
     const deleteOwnedFish = (fish_id, common) => {
-        // console.log('Before Delete', ownedFish.length)
         const fishToRemove = ownedFish.find((fish) => fish.fish_id === fish_id && fish.user_id === user.id)
         fetch(`/owned_fish/${fishToRemove.id}`, { method:'DELETE' })
         .then(r => {
@@ -70,22 +68,26 @@ function FreshwaterFish(){
             }
         })
     }
-    // console.log('After Delete', ownedFish.length)
     
-    const dataCards = allFish.map(fish => <DataCard
-        key={fish.id}
-        image={fish.image}
-        common={fish.common_name}
-        scientific={fish.scientific_name}
-        id={fish.id}
-        ownedIds={ownedFishIds}
-        type={type}
-        addOwned={addOwnedFish}
-        removeOwned={deleteOwnedFish}
-        />)
+    const dataCards = allFish.map(fish => {
+        return(
+            <Grid key={fish.id} item xs={3}>
+                <DataCard
+                    image={fish.image}
+                    common={fish.common_name}
+                    scientific={fish.scientific_name}
+                    id={fish.id}
+                    ownedIds={ownedFishIds}
+                    type={type}
+                    addOwned={addOwnedFish}
+                    removeOwned={deleteOwnedFish}
+                    />
+            </Grid>
+        )
+    })
   
     return(
-        <Container maxWidth='sm'>
+        <Container maxWidth={'xl'}>
             <Snackbar
                 open={openSnackBar}
                 autoHideDuration={2000}
@@ -94,14 +96,13 @@ function FreshwaterFish(){
                 anchorOrigin={{vertical: 'top', horizontal: 'right'}}
             />
             <Container>
-                <Typography variant='h3'>Freshwater Fish</Typography>
+                <Typography variant='h3' align="center" sx={{marginBottom:'2%'}}>Freshwater Fish</Typography>
             </Container>
-            <Container>
+            <Grid container spacing={3} maxWidth={'auto'}>
                 {dataCards}
-            </Container>
+            </Grid>
         </Container>
         )
-    
 }
 
 export default FreshwaterFish;

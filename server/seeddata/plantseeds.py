@@ -9,7 +9,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Doesn't require substrate, but can be attached to decor",
-        image="./static/java_moss.jpeg",
+        image="/static/java_moss.jpeg",
         filtration=1
     ),
     Plant(
@@ -20,7 +20,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Can be attached to decor or planted in substrate",
-        image="./static/anubias_nana_petite.jpeg",
+        image="/static/anubias_nana_petite.jpeg",
         filtration=1
     ),
     Plant(
@@ -31,7 +31,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Doesn't require substrate, but can be attached to decor",
-        image="./static/java_fern.jpeg",
+        image="/static/java_fern.jpeg",
         filtration=1
     ),
     Plant(
@@ -42,7 +42,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/amazon_sword.jpeg",
+        image="/static/amazon_sword.jpeg",
         filtration=1
     ),
     Plant(
@@ -53,7 +53,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_wendtii.jpeg",
+        image="/static/crypt_wendtii.jpeg",
         filtration=1
     ),
     Plant(
@@ -64,7 +64,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/water_wisteria.jpeg",
+        image="/static/water_wisteria.jpeg",
         filtration=1
     ),
     Plant(
@@ -75,7 +75,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/dwarf_sagittaria.jpeg",
+        image="/static/dwarf_sagittaria.jpeg",
         filtration=1
     ),
     Plant(
@@ -86,7 +86,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Doesn't require substrate, can be left to float or anchored",
-        image="./static/hornwort.jpeg",
+        image="/static/hornwort.jpeg",
         filtration=1
     ),
     Plant(
@@ -97,7 +97,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/vall_spiralis.jpeg",
+        image="/static/vall_spiralis.jpeg",
         filtration=1
     ),
     Plant(
@@ -108,7 +108,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/dwarf_hairgrass.jpeg",
+        image="/static/dwarf_hairgrass.jpeg",
         filtration=1
     ),
     Plant(
@@ -119,7 +119,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/ludwigia_repens.jpeg",
+        image="/static/ludwigia_repens.jpeg",
         filtration=1
     ),
     Plant(
@@ -130,7 +130,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/rotala-rotundifolia.jpeg",
+        image="/static/rotala-rotundifolia.jpeg",
         filtration=1
     ),
     Plant(
@@ -141,7 +141,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Doesn't require substrate, but can be planted in substrate",
-        image="./static/water_sprite.jpeg",
+        image="/static/water_sprite.jpeg",
         filtration=1
     ),
     Plant(
@@ -152,7 +152,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Floating plant",
-        image="./static/amazon_frogbit.jpeg",
+        image="/static/amazon_frogbit.jpeg",
         filtration=1
     ),
     Plant(
@@ -163,7 +163,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_parva.jpeg",
+        image="/static/crypt_parva.jpeg",
         filtration=1
     ),
     Plant(
@@ -174,7 +174,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_balansae.jpeg",
+        image="/static/crypt_balansae.jpeg",
         filtration=1
     ),
     Plant(
@@ -185,7 +185,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Floating plant",
-        image="./static/duckweed.jpg",
+        image="/static/duckweed.jpg",
         filtration=1
     ),
     Plant(
@@ -196,7 +196,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/monte_carlo.jpeg",
+        image="/static/monte_carlo.jpeg",
         filtration=1
     ),
     Plant(
@@ -207,7 +207,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Low to moderate",
         substrate="Can be attached to decor or carpeted",
-        image="./static/christmas_moss.jpeg",
+        image="/static/christmas_moss.jpeg",
         filtration=1
     ),
     Plant(
@@ -218,7 +218,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/staurogyne_repens.jpeg",
+        image="/static/staurogyne_repens.jpeg",
         filtration=1
     ),
     Plant(
@@ -229,7 +229,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Low to moderate",
         substrate="Can be attached to decor",
-        image="./static/flame_moss.jpeg",
+        image="/static/flame_moss.jpeg",
         filtration=1
     ),
     Plant(
@@ -240,7 +240,7 @@ plantseed = [
         care_level="Difficult",
         lighting_needs="High",
         substrate="Nutrient-rich substrate",
-        image="./static/dwarf_baby_tears.jpeg",
+        image="/static/dwarf_baby_tears.jpeg",
         filtration=1
     ),
     Plant(
@@ -251,7 +251,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/alter_reineckii.jpeg",
+        image="/static/alter_reineckii.jpeg",
         filtration=1
     ),
     Plant(
@@ -262,7 +262,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_lutea.jpeg",
+        image="/static/crypt_lutea.jpeg",
         filtration=1
     ),
     Plant(
@@ -273,7 +273,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_undulata.jpeg",
+        image="/static/crypt_undulata.jpeg",
         filtration=1
     ),
     Plant(
@@ -284,7 +284,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_lucens.jpeg",
+        image="/static/crypt_lucens.jpeg",
         filtration=1
     ),
     Plant(
@@ -295,7 +295,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/giant_hygro.jpeg",
+        image="/static/giant_hygro.jpeg",
         filtration=1
     ),
     Plant(
@@ -306,7 +306,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/red_tiger_lotus.jpg",
+        image="/static/red_tiger_lotus.jpg",
         filtration=1
     ),
     Plant(
@@ -317,7 +317,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/brazilian_pennywort.jpeg",
+        image="/static/brazilian_pennywort.jpeg",
         filtration=1
     ),  
     Plant(
@@ -328,7 +328,7 @@ plantseed = [
         care_level="Moderate",
         lighting_needs="Moderate to high",
         substrate="Nutrient-rich substrate",
-        image="./static/dwarf_lilly.jpeg",
+        image="/static/dwarf_lilly.jpeg",
         filtration=1
     ),
     Plant(
@@ -339,7 +339,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/crypt_spiralis.jpeg",
+        image="/static/crypt_spiralis.jpeg",
         filtration=1
     ),
     Plant(
@@ -350,7 +350,7 @@ plantseed = [
         care_level="Easy",
         lighting_needs="Moderate",
         substrate="Nutrient-rich substrate",
-        image="./static/amazon_compacta.jpeg",
+        image="/static/amazon_compacta.jpeg",
         filtration=1
     ),
 ]

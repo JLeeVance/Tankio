@@ -1,14 +1,14 @@
-import { Box } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import Typography from '@mui/material/Typography'
 
 function Header(){
 
     return (
-        <Box sx={{width:"110%", margin:-1, marginBottom:3, padding:'0', textAlign:'center'}} bgcolor="#72D7E0" >
-            <Typography variant='h1' padding={'1%'} >
+        <Container maxWidth={'false'} sx={{marginBottom:2, padding:'1%', textAlign:'center', backgroundColor:'#72D7E0'}} >
+            <Typography variant='h1'>
                 Tankio 
             </Typography>
-        </Box>
+        </Container>
     )
 }
 

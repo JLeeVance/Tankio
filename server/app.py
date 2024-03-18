@@ -113,6 +113,7 @@ class PlantById(Resource):
         if not plant:
             return make_response({'error':'No plant found'}, 404)
         
+        print(plant.image)
         return make_response(plant.to_dict(), 200)
 
 api.add_resource(PlantById, '/plants/<int:id>')
