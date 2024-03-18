@@ -50,9 +50,11 @@ class UsersById(Resource):
             return make_response({'error':'No User found by the given Id'})
         try:
             patch_data = request.get_json()
+            if 'password' in patch_data.keys():
+                    user.password_hash = patch_data['password']
             for key, value in patch_data.items():
                 setattr(user, key, value)
-            
+
             db.session.commit()
             return make_response(user.to_dict(), 202)
         except Exception as e:
