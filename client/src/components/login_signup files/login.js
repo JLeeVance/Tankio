@@ -70,7 +70,7 @@ function Login({ updateUser , setHasAccount  }){
                 onChange={formik.handleChange}
                 value={formik.values.username}
                 helperText='required *'
-            />
+                />
             <TextField  
                 required
                 label="Password"
@@ -79,14 +79,14 @@ function Login({ updateUser , setHasAccount  }){
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 helperText='required *'
-            />
+                />
             <Snackbar
                 open={openSnackBar}
                 autoHideDuration={3000}
                 onClose={handleSnackbarClose}
                 message={snackbarMessage}
                 anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-            />
+                />
             <Button type='submit'>Login</Button>
             <Button type='click' onClick={handleSignupClick}>New here? Click to signup!</Button>
         </FormControl >
