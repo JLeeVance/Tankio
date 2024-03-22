@@ -221,6 +221,15 @@ class OwnedFishesById(Resource):
         
 api.add_resource(OwnedFishesById, '/owned_fish/<int:id>')
 
+class Tanks(Resource):
+
+    def get(self):
+        tanks = [tank.to_dict() for tank in Tank.query.all()]
+
+        return make_response(tanks, 200)
+    
+api.add_resource(Tanks, '/tanks')
+
 
 
 class CheckSession(Resource):

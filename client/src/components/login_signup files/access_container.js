@@ -17,11 +17,9 @@ function AccessContainer({ updateUser }){
                 <Signup 
                     updateUser={updateUser}
                     setHasAccount={setHasAccount}/>
-        }
+            }
         </Container>
     )
-
-
 }
 
 export default AccessContainer;

@@ -30,8 +30,8 @@ function Home(){
     let totalPlants = userPlants.length
     let totalFish = userFish.length
 
-    const ownedFishTile = userFish.map(fish => <Tile type='fish' handleRemove={handleRemove} {...fish}/>)
-    const ownedPlantTile = userPlants.map(plant => <Tile type='plant' handleRemove={handleRemove} {...plant}/>)
+    const ownedFishTile = userFish.map(fish => <Tile key={fish.id} type='fish' handleRemove={handleRemove} {...fish}/>)
+    const ownedPlantTile = userPlants.map(plant => <Tile key={plant.id} type='plant' handleRemove={handleRemove} {...plant}/>)
 
     function handleEditClick(){
         setIsEditing(!isEditing)
