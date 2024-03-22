@@ -12,7 +12,7 @@ function Tile({
     type
 }){
     return (
-        <Card raised='true' sx={{maxWidth:'90%', maxHeight:'50%', margin:'.5%'}}>
+        <Card raised sx={{maxWidth:'90%', maxHeight:'50%', margin:'.5%'}}>
             <CardContent>
                 {common_name}
                 <Button onClick={() => handleRemove(id, type, common_name)}>Remove</Button>

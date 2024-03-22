@@ -9,7 +9,7 @@ fishseed = [
         care_level="Easy",
         max_size=3,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=2,
         image="/static/betta.jpg"
     ),
     FreshwaterFish(
@@ -31,7 +31,7 @@ fishseed = [
         care_level="Easy",
         max_size=2.5,  # Inches
         ph_range="7.0 - 8.0",
-        bioload=1,
+        bioload=2.5,
         image="/static/guppy.jpg"
     ),
     FreshwaterFish(
@@ -42,7 +42,7 @@ fishseed = [
         care_level="Moderate",
         max_size=12,  # Inches
         ph_range="6.0 - 8.0",
-        bioload=1,
+        bioload=12,
         image="/static/goldfish.jpg"
     ),
     FreshwaterFish(
@@ -53,7 +53,7 @@ fishseed = [
         care_level="Moderate",
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=6,
         image="/static/angelfish.jpg"
     ),
     FreshwaterFish(
@@ -64,7 +64,7 @@ fishseed = [
         care_level="Easy",
         max_size=2,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=2,
         image="/static/zebra_danio.jpeg"
     ),
     FreshwaterFish(
@@ -75,7 +75,7 @@ fishseed = [
         care_level="Easy",
         max_size=2.5,  # Inches
         ph_range="7.0 - 8.0",
-        bioload=1,
+        bioload=3,
         image="/static/platys.jpg"
     ),
     FreshwaterFish(
@@ -86,7 +86,7 @@ fishseed = [
         care_level="Easy",
         max_size=4,  # Inches
         ph_range="7.0 - 8.0",
-        bioload=1,
+        bioload=4,
         image="/static/swordtail.jpeg"
     ),
     FreshwaterFish(
@@ -97,7 +97,7 @@ fishseed = [
         care_level="Advanced",
         max_size=8,  # Inches
         ph_range="6.0 - 7.0",
-        bioload=1,
+        bioload=12,
         image="/static/discus.jpg"
     ),
     FreshwaterFish(
@@ -108,7 +108,7 @@ fishseed = [
         care_level="Easy",
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=2.5,
         image="/static/cherry_barb.jpg"
     ),
     FreshwaterFish(
@@ -119,7 +119,7 @@ fishseed = [
         care_level="Easy",
         max_size=3,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=3,
         image="/static/tiger_barb.jpeg"
     ),
     FreshwaterFish(
@@ -130,7 +130,7 @@ fishseed = [
         care_level="Easy",
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=2.5,
         image="/static/harlequin_rasbora.jpeg"
     ),
     FreshwaterFish(
@@ -141,7 +141,7 @@ fishseed = [
         care_level="Intermediate",
         max_size=4,  # Inches
         ph_range="6.0 - 7.0",
-        bioload=1,
+        bioload=2,
         image="/static/kuhli_loach.jpg"
     ),
     FreshwaterFish(
@@ -152,7 +152,7 @@ fishseed = [
         care_level="Easy",
         max_size=5,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=4,
         image="/static/rainbow_fish.jpeg"
     ),
     FreshwaterFish(
@@ -163,7 +163,7 @@ fishseed = [
         care_level="Moderate",
         max_size=12,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=12,
         image="/static/clown_loach.jpeg"
     ),      
     FreshwaterFish(
@@ -174,7 +174,7 @@ fishseed = [
         care_level="Easy",
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=2,
         image="/static/bristlenose.jpeg"
     ),
     FreshwaterFish(
@@ -185,7 +185,7 @@ fishseed = [
         care_level="Easy",
         max_size=5,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=3,
         image="/static/pearl_gourami.jpg"
     ),
     FreshwaterFish(
@@ -196,7 +196,7 @@ fishseed = [
         care_level="Easy",
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=3,
         image="/static/rosy_barb.jpeg"
     ),
     FreshwaterFish(
@@ -207,7 +207,7 @@ fishseed = [
         care_level="Moderate",
         max_size=12,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=12,
         image="/static/green_terror.jpeg"
     ),
     FreshwaterFish(
@@ -229,7 +229,7 @@ fishseed = [
         care_level="Easy",
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=2,
         image="/static/panda_cory.jpeg"
     ),
     FreshwaterFish(
@@ -240,7 +240,7 @@ fishseed = [
         care_level="Easy",
         max_size=2.5,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=3,
         image="/static/dwarf_gourami.jpeg"
     ),
     FreshwaterFish(
@@ -251,7 +251,7 @@ fishseed = [
         care_level="Easy",
         max_size=2,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=2,
         image="/static/dwarf_frog.jpeg"
     ),
     FreshwaterFish(
@@ -262,7 +262,7 @@ fishseed = [
         care_level="Moderate",
         max_size=6,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=2,
         image="/static/glass_cat.jpeg"
     ),
     FreshwaterFish(
@@ -273,7 +273,7 @@ fishseed = [
         care_level="Moderate",
         max_size=6,  # Inches
         ph_range="6.5 - 7.5",
-        bioload=1,
+        bioload=6,
         image="/static/redtail_shark.jpeg"
     ),
     FreshwaterFish(
@@ -306,7 +306,7 @@ fishseed = [
         care_level="Easy",
         max_size=3,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=3,
         image="/static/bolivian_ram.jpeg"
     ),
     FreshwaterFish(
@@ -317,7 +317,7 @@ fishseed = [
         care_level="Easy",
         max_size=6,  # Inches
         ph_range="6.0 - 7.5",
-        bioload=1,
+        bioload=6,
         image="/static/blue_gourami.jpeg"
     ),
     FreshwaterFish(

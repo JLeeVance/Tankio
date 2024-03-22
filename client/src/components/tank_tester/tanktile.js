@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { 
     Card,
     CardContent,
@@ -8,25 +9,49 @@ import {
 
 function TankTile({
     common,
-    number
+    number,
+    object,
+    onAddTile
 }){
+   
+    const [fish, setFish] = useState(object.hasOwnProperty('bioload'))
 
+    function handleAddClick(){
+        onAddTile(object)
+    }
 
-
-
-    
-    return (
-        <Card raised sx={{maxWidth:'90%', maxHeight:'50%', margin:'.5%'}}>
+    return(
+        <>
+        {fish? 
+        <Card raised sx={{maxWidth:'90%', margin:'.5%'}}>
             <CardContent sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant={'overline'} sx={{textAlign:'left'}}>
+                <Button onClick={() => handleAddClick()}>
+                    Add to test
+                </Button>
+                <Typography variant={'overline'}>
                     {number}
                 </Typography>
-                <Typography variant={'h6'} sx={{textAlign:'right'}}>
+                <Typography variant={'h6'} sx={{fontSize:'auto'}}>
                     {common}
                 </Typography>
-                
             </CardContent>
         </Card>
+        :
+        <Card raised sx={{maxWidth:'90%', maxHeight:'50%', margin:'.5%'}}>
+            <CardContent sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant={'subtitle1'} sx={{fontSize:'auto'}}>
+                    {common}
+                </Typography>
+                <Typography variant={'overline'}>
+                    {number}
+                </Typography>
+                <Button onClick={() => handleAddClick()}>
+                    Add to test
+                </Button>
+            </CardContent>
+        </Card>
+        }
+        </> 
     )
 }
 

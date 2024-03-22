@@ -80,12 +80,12 @@ function EditPassword({ user, onSuccess, onFail }){
                 display={'flex'}
                 height={'100%'}
                 autoComplete='off'
-                password
                 onSubmit={passformik.handleSubmit}
                 >
                 <Typography variant='overline' sx={{textDecoration:'underline'}}>New Password</Typography>
                 <TextField
                     required
+                
                     label='New Password'
                     name='password'
                     onChange={passformik.handleChange}
@@ -99,12 +99,12 @@ function EditPassword({ user, onSuccess, onFail }){
                 display={'flex'}
                 height={'100%'}
                 autoComplete='off'
-                password
                 onSubmit={authformik.handleSubmit}
                 >
                 <Typography variant='overline' sx={{textDecoration:'underline'}}>Current Password</Typography>
                 <TextField
                     required
+                    
                     label='Current Password'
                     name='password'
                     onChange={authformik.handleChange}
