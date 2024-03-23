@@ -9,11 +9,11 @@ import {
     Divider,
     ListItem,
     ListItemButton,
-    ListItemIcon,
     ListItemText,
 } from '@mui/material'
 
 function NavBar(){
+    
     const nav = useNavigate()
 
     const { setUser } = useContext(UserContext)
@@ -68,7 +68,9 @@ function NavBar(){
                     </ListItemButton>
                 </ListItem>
             </List>
+
             <Divider/>
+
             <List>
                 <ListItem>
                     <ListItemButton onClick={handleLogout}>
@@ -80,12 +82,12 @@ function NavBar(){
     )
 
     return (
-        <>
+        <div style={{top:'11%', left: 0, right: 0, margin:'.25%'}}>
             <Button onClick={toggleNav(true)}>Menu</Button>
             <Drawer open={open} onClose={toggleNav(false)}>
                 {drawerList}
             </Drawer>
-        </>
+        </div>
     )
 }
 

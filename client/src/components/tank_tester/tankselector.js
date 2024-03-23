@@ -5,14 +5,15 @@ import {
     FormLabel,
     FormControlLabel,
     Radio,
-    RadioGroup
+    RadioGroup,
+    Grid,
+    Typography
 } from '@mui/material'
 
 function TankSelector({ onTankSelect }){
 
     const tanks = [ 10, 20, 30, 40, 50]
-    let labels = tanks.map(tank => <FormControlLabel key={tank} value={tank} control={<Radio size='small'/>} label={tank}/>)
-
+  
     function handleOnChange(e){
         let value = e.target.value
         onTankSelect(value)
@@ -21,15 +22,21 @@ function TankSelector({ onTankSelect }){
     
 
     return(
-        <FormControl sx={{backgroundColor:'grey', margin:'2%', justifyItems:'center', maxWidth:'100%'}}>
-            <FormLabel id="tank_size_radio" sx={{textAlign:'center'}}>Tank Size</FormLabel>
+        <FormControl fullWidth sx={{backgroundColor:'lightgrey', justifyItems:'center'}}>
+            <FormLabel id="tank_size_radio" sx={{textAlign:'center'}}><Typography variant='h6'>Tank Size</Typography></FormLabel>
                 <RadioGroup
                 row
                 defaultValue='10'
                 name="radio-buttons-group"
                 onChange={(e) => handleOnChange(e)}
                 >
-                    {labels}
+                    <Grid container spacing={2} justifyContent={'center'} textAlign={'center'}>
+                    {tanks.map((label) => (
+                        <Grid item key={label}>
+                            <FormControlLabel value={label} control={<Radio />} label={label + ' gal'}/>
+                        </Grid>
+                    ))}
+                    </Grid>
             </RadioGroup>
         </FormControl>
     )

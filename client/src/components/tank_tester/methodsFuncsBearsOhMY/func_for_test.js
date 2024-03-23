@@ -42,11 +42,11 @@ function getPlantTotalImprovement(plantCount, stockedPlants){
 
 function handleGoodResponse(difference){
     if(difference >= 0){
-        if(difference >= 0 && difference <= 2){
+        if(difference >= 0 && difference <= 1){
             return response['Nuetral0'].message
-        }else if(difference > 2 && difference <= 6){
+        }else if(difference > 1 && difference <= 5){
             return response['Okay1'].message
-        }else if(difference > 6 && difference <=12){
+        }else if(difference > 5 && difference <=10){
             return response['Great2'].message
         }else if(difference > 12 && difference <= 18){
             return response['Amazing3'].message

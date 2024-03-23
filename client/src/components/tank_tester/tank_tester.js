@@ -1,11 +1,13 @@
 import { useContext, useState, useEffect } from 'react'
 import {
     Grid,
-    Box,
+    Paper,
     Typography,
     Divider,
-    Snackbar,
     Button,
+    IconButton,
+    Box,
+    Container
 } from '@mui/material'
 import { OwnedPlantsContext } from '../../context/ownedplants'
 import { OwnedFishContext } from '../../context/ownedfish'
@@ -13,6 +15,8 @@ import TankTile from './tanktile'
 import StockedTile from './stockedtile'
 import TankSelector from './tankselector'
 import ResultsMessage from './results_message'
+import BioloadInfo from './methodsFuncsBearsOhMY/bioload_info'
+import FiltrationInfo from './methodsFuncsBearsOhMY/filtration_info'
 import { 
     getFishTotalBioload,
     getPlantTotalImprovement,
@@ -20,8 +24,8 @@ import {
     handleGoodResponse,
     handleNoFishStocked,
     handleHeavilyPlantedTank
- } from './functions'
-import { response } from './test_responses'
+ } from './methodsFuncsBearsOhMY/func_for_test'
+import { response } from './methodsFuncsBearsOhMY/test_responses'
 
 function TankTester(){
 
@@ -38,7 +42,11 @@ function TankTester(){
 
     const [ plantTestCountDic, setPlantTestCountDic ] = useState({})
     const [ fishTestCountDic, setFishTestCountDic ] = useState({})
+
     const [ message, setMessage ] = useState('')
+    const [ showBioInfo, setShowBioInfo ] = useState(false)
+    const [ showFiltrationInfo, setShowFiltrationInfo ] = useState(false)
+
 
     useEffect(() => {
         fetch('/tanks').then(r => r.json())
@@ -57,6 +65,22 @@ function TankTester(){
    
     const ownedFTile = ownedFish.map(fish => <TankTile key={fish.fish.common_name} common={fish.fish.common_name} number={fish.fish.bioload} object={fish.fish} onAddTile={addToTest2}/>)
     const ownedPTile = ownedPlants.map(plant => <TankTile key={plant.plant.common_name} common={plant.plant.common_name} number={plant.plant.filtration} object={plant.plant} onAddTile={addToTest2}/>)
+
+    function handleShowBioInfo(){
+        setShowBioInfo(true)
+    }
+
+    function handleCloseBioInfo(){
+        setShowBioInfo(false)
+    }
+
+    function handleShowFiltrationInfo(){
+        setShowFiltrationInfo(true)
+    }
+
+    function handleCloseFiltrationInfo(){
+        setShowFiltrationInfo(false)
+    }
 
     function handleCountChange(object, action){
         if(object.hasOwnProperty('bioload')){
@@ -196,118 +220,100 @@ function TankTester(){
         setMessage('')
     }
     
-    
-
-
-
-
-
-    // const removeFromTest = (type, object,) => {
-    //     console.log('OBJECT PASSED IN:' ,object)
-    //     console.log('stockedNames Inside removeFromTest' , stockedNames)
-        
-    //     let common_name = object.common_name
-        
-    //     let nameToDelete = stockedNames.filter(name => name === common_name)
-    //     console.log('NAME FROM FILTERED LIST TO DELETE' , nameToDelete)
-        
-    //     let newStockedNames = stockedNames.filter(name => name !== common_name)
-    //     console.log('AFTER DELETE ~newStockedNames')
-
-    //     setStockedNames(newStockedNames)
-    //     removeTileFromTest(type, object, stockedNames, stockedFish, stockedPlants)
-    // }
-
-    // function removeTileFromTest({type, object, stockedNames, stockedPlants}){
-    //     if(type === 'fish'){
-    //         console.log('Inside RemoveTileFromTest~state, StockedFish', stockedFish)
-    //         // let newStockedFish = stockedFish.filter(fish => fish.props.object.common_name !== common_name)
-    //         // console.log('After Filter of StockedFish' , newStockedFish)
-    //         // setStockedFish(newStockedFish)
-    //         // removeFromTestDic(type, object)
-    //     } else if(type === 'plant'){
-    //         console.log('Inside RemoveTileFromTest~state, StockedPlants', stockedPlants)
-    //         // let newStockedPlants = stockedPlants.filter(plant => plant.props.object.common_name !== common_name)
-    //         // console.log('After Filter of StockedFish' , newStockedPlants)
-    //         // setStockedPlants(newStockedPlants)
-    //         // removeFromTestDic(type, object)
-    //     }
-    // }
-    
-    // function addToTest(type, object){
-    //     if(stockedNames.includes(object.common_name)){
-    //         return
-    //     }
-    //     setStockedNames((stockedNames)=> [...stockedNames, object.common_name])
-    //     console.log(stockedNames)
-    //     if(stockedNames.length > 0){
-    //     addTileToTest(type, object)
-    //     }
-    // }
-
-    // function addTileToTest(type, object){
-
-    //     if(type === 'fish'){
-    //         console.log(stockedNames)
-    //         let newStockedTile = <StockedTile key={object.common_name} type={type} object={object} onRemoveClick={removeFromTest} onStateChange={handleCountChange} stockedNames={stockedNames} stockedFish={stockedFish}/>
-    //         setStockedFish((stockedFish) => [...stockedFish, newStockedTile])
-    //         console.log('inside addTileToTest~After setStockedFish' , stockedNames)
-    //     } else if(type === 'plant'){
-    //         let newStockedTile = <StockedTile key={object.common_name} type={type} object={object} onRemoveClick={removeFromTest} onStateChange={handleCountChange} stockedNames={stockedNames} stockedPlants={stockedPlants}/>
-    //         setStockedPlants((stockedPlants)=> [...stockedPlants, newStockedTile])
-    //         console.log('inside addTileToTest~After setStockedPlants', stockedNames)
-    //     }
-    // }
-    // console.log('outside addTileToTest' , stockedNames)
-
-
     return (
-        <Grid container maxWidth={'100%'} maxHeight={'100%'} sx={{backgroundColor:'lightgrey'}}>
-            {message.length > 0 && <ResultsMessage 
-                                        results_message={message} 
-                                        onResultClose={resetMessage} 
-                                        stockedFish={stockedFish} 
-                                        stockedPlants={stockedPlants} 
-                                        tank={chosenTank}/>
-                                        }
-            <Grid item xs={12} textAlign={'center'} margin={'1%'}>
-                <Typography variant='h4' sx={{textDecoration:'underline'}}>TankTester</Typography>
-            </Grid>
-            <Divider/>
-            <Grid container maxWidth={'100%'}>
-                <Grid item xs={3} textAlign={'left'}>
-                    <Typography variant='h6' sx={{textDecoration:'underline', textAlign:'center'}}>Your Plants</Typography>
-                    <Box>
-                        {ownedPTile}
-                    </Box>
-                </Grid>
-                <Grid item xs={6}>
-                    <Grid container maxWidth={'100%'} sx={{backgroundColor:'white'}} >
-                        <Grid item xs={12} >
-                            <TankSelector onTankSelect={handleTankSet} />
+        <div
+            style={{
+            backgroundColor: 'lightgrey',
+            top: '150%',
+            position: 'inherit',
+            
+            }}>
+            <Grid container maxWidth={'100%'} style={{height:'80vh'}}>
+                {message.length > 0 && <ResultsMessage 
+                                            results_message={message} 
+                                            onResultClose={resetMessage} 
+                                            stockedFish={stockedFish} 
+                                            stockedPlants={stockedPlants} 
+                                            tank={chosenTank}/>
+                                            }
+                <Grid item xs={12} textAlign={'center'} sx={{padding:'1%'}}>
+
+                    <Grid container>
+                        <Grid item xs={2}>
+                            <IconButton size={'small'} onClick={handleShowFiltrationInfo} sx={{top:'20%', bottom:0, left:-10}}>
+                                Filtration Info
+                            </IconButton>
+                            {showFiltrationInfo && <FiltrationInfo onDialogClose={handleCloseFiltrationInfo}/>}
                         </Grid>
-                        <Divider/>
-                        <Grid item xs={4} sx={{textAlign:'center'}}>
-                            <Typography variant='overline' sx={{textDecoration:'underline'}}>Stocked</Typography>{stockedPlants}
+                        <Grid item xs={8}>
+                            <Typography variant='h4' sx={{textDecoration:'underline'}}>TankTester</Typography>
                         </Grid>
-                        <Grid item xs={4} sx={{textAlign:'center'}}>
-                            <Box>
-                                <Button onClick={runTest}>Run Tank Test</Button>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={4} sx={{textAlign:'center'}}>
-                        <Typography variant='overline' sx={{textDecoration:'underline'}}>Stocked</Typography>{stockedFish}
+                        <Grid item xs={2}>
+                            <IconButton size={'small'} onClick={handleShowBioInfo} sx={{top:'20%', bottom:0, left:10}}>
+                                Bioload Info
+                            </IconButton>
+                            {showBioInfo && <BioloadInfo onDialogClose={handleCloseBioInfo}/>}
                         </Grid>
                     </Grid>
+
+
                 </Grid>
-                <Grid item xs={3} textAlign={'right'}>
-                    <Typography variant='h6' sx={{textDecoration:'underline', textAlign:'center'}}>Your Fish</Typography>
-                    <Box>
-                        {ownedFTile}
-                    </Box>
+
+
+                <Divider />
+
+
+                <Grid container maxWidth={'100%'}>
+                    <Grid item xs={3} textAlign={'left'} padding={'1%'}>    
+                        <Typography variant='h6' sx={{textDecoration:'underline', textAlign:'center', marginBottom:'2%'}}>Your Plants</Typography>
+                        <div style={{ overflow: 'scroll', height:'61vh', backgroundColor:'grey', padding:'1%'}}>
+                            {ownedPTile}
+                        </div>
+                    </Grid>
+                    <Grid item xs={6} >
+                        <Grid container maxWidth={'100%'} style={{height:'65vh', backgroundColor:'white'}} >
+
+                            <Grid item xs={12} padding={'1%'}>
+                                <TankSelector onTankSelect={handleTankSet} />
+                            </Grid>
+
+                            <Grid item xs={4} sx={{textAlign:'center', backgroundColor:'lightgrey', height:'50vh'}}>
+                                <Grid container maxWidth={'100%'}>
+                                    <Grid item xs={12}>
+                                        <Typography variant='overline' sx={{textDecoration:'underline'}}>Stocked</Typography>
+                                        <div style={{ overflow: 'scroll', padding:'1%'}}>
+                                            {stockedPlants}
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <Grid item xs={4} sx={{textAlign:'center'}}>
+                                <Box>
+                                    <Button onClick={runTest}>Run Tank Test</Button>
+                                </Box>
+                            </Grid>
+
+                            <Grid item xs={4} sx={{textAlign:'center', backgroundColor:'lightgrey', height:'50vh'}}>
+                                <Typography variant='overline' sx={{textDecoration:'underline'}}>Stocked</Typography>
+                                <div style={{ overflow: 'scroll', padding:'1%'}}>
+                                    {stockedFish}
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item xs={3} textAlign={'right'} padding={'1%'}>
+                        <Typography variant='h6' sx={{textDecoration:'underline', textAlign:'center', marginBottom:'2%'}}>Your Fish</Typography>
+                        <div style={{ overflow: 'scroll', height:'61vh', backgroundColor:'grey', padding:'1%'}}>
+                            {ownedFTile}
+                        </div>
+                    </Grid>  
                 </Grid>
+
+
             </Grid>
-        </Grid>
+        </div>
     )
 }
 
