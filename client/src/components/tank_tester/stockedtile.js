@@ -4,7 +4,8 @@ import {
     CardContent,
     Typography,
     IconButton,
-    Icon
+    Grid,
+    CardActionArea
 } from '@mui/material'
  
 
@@ -40,43 +41,101 @@ function StockedTile({
     return(
         <>
         {fish?
-            <Card raised sx={{maxWidth:'90%', margin:'.5%'}}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant={'overline'}>
-                        {object.bioload} <Typography variant='overline'> :Bioload</Typography>
-                    </Typography>
-                    <Typography variant={'h6'} sx={{fontSize:'small', float:'right'}}>
-                        {object.common_name} <Typography variant='overline'>  Stocked:{count}</Typography>
-                        <IconButton onClick={increaseCount}>
-                            +
-                        </IconButton>
-                        <IconButton onClick={decreaseCount}>
-                            -
-                        </IconButton>
-                    </Typography>
-                    <IconButton onClick={handleRemoveClick} sx={{margin:'-10%'}}>
-                        x
-                    </IconButton>
+            <Card raised sx={{maxWidth:'98%', maxHeight:'22.5%', margin:'1%'}}>
+                <CardContent sx={{ display: 'flex'}}>
+                    <Grid container maxWidth={'100%'}>
+                        <Grid item xs={3}>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.1vh'}}>
+                                        Bioload
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant='overline' style={{fontSize:'1.1vh'}}>
+                                        {object.bioload} 
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={7}>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Typography variant='h6' style={{fontSize:'1.5vh'}}>
+                                        {object.common_name}
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12} sx={{display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'flex-end', marginTop:'5%'}}>
+                                    <Typography xs={{textDecoration:'underline'}} style={{fontSize:'1.2vh'}}>
+                                        Stocked: {count}
+                                    </Typography>
+                                    <div style={{flexDirection:'row'}}>
+                                        <IconButton size={'small'} onClick={increaseCount} style={{fontSize:'1.85vh'}}>
+                                            +
+                                        </IconButton>
+                                        <IconButton size={'small'} onClick={decreaseCount} style={{fontSize:'1.85vh'}}>
+                                            -
+                                        </IconButton>
+                                    </div>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={1}>
+                            <IconButton size={'small'} style={{fontSize:'2vh'}} onClick={handleRemoveClick}>
+                                x
+                            </IconButton>
+                        </Grid>
+                    </Grid>
                 </CardContent>
             </Card>
             :
-            <Card raised sx={{maxWidth:'90%', maxHeight:'50%', margin:'.5%'}}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <IconButton onClick={handleRemoveClick} sx={{margin:'-10%'}}>
-                        x
-                    </IconButton>
-                    <Typography variant={'h6'} fontSize={'small'} sx={{ marginLeft:'0%', marginRight:'0%'}}>
-                        <Typography variant='overline' fontSize={'x-small'}>Stocked:{count} </Typography>{object.common_name}
-                        <IconButton onClick={increaseCount}>
-                            +
-                        </IconButton>
-                        <IconButton onClick={decreaseCount}>
-                            -
-                        </IconButton>
-                    </Typography>
-                    <Typography variant={'overline'}>
-                        <Typography variant='overline' fontSize={'xsmall'}> Filtration:</Typography>{object.filtration}
-                    </Typography>
+            <Card raised sx={{maxWidth:'98%', maxHeight:'22.5%', margin:'1%'}}>
+                <CardContent sx={{ display: 'flex'}}>
+                    <Grid container maxWidth={'100%'}>
+                        <Grid item xs={1}>
+                            <IconButton size={'small'} style={{fontSize:'2vh'}} onClick={handleRemoveClick}>
+                                x
+                            </IconButton>
+                        </Grid>
+
+                        <Grid item xs={7}>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Typography variant='h6' style={{fontSize:'1.5vh'}}>
+                                        {object.common_name}
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12} sx={{display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent:'flex-end', marginTop:'5%'}}>
+                                    <Typography xs={{textDecoration:'underline'}} style={{fontSize:'1.2vh'}}>
+                                        Stocked: {count}
+                                    </Typography>
+                                    <div style={{flexDirection:'row'}}>
+                                        <IconButton size={'small'} onClick={increaseCount} style={{fontSize:'1.85vh'}}>
+                                            +
+                                        </IconButton>
+                                        <IconButton size={'small'} onClick={decreaseCount} style={{fontSize:'1.85h'}}>
+                                            -
+                                        </IconButton>
+                                    </div>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid item xs={3}>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.1vh'}}>
+                                        Filtration
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant='overline' style={{fontSize:'1.1vh'}}>
+                                        {object.filtration} 
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </CardContent>
             </Card>
         }

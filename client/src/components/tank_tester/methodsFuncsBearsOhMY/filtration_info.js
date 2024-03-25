@@ -1,12 +1,12 @@
 import {
     Box,
-    Button,
     Dialog,
     DialogContent,
     DialogContentText,
     DialogTitle,
-    DialogActions,
     Divider,
+    DialogActions,
+    Button,
     Typography
 } from '@mui/material'
 import { useState } from 'react'
@@ -18,6 +18,7 @@ function FiltrationInfo({ onDialogClose }){
     function handleClose(){
         setOpen(false)
         onDialogClose()
+        
     }
 
 
@@ -55,11 +56,6 @@ function FiltrationInfo({ onDialogClose }){
                     </Box>
                 </DialogContentText>
             </DialogContent>
-            <DialogActions>
-                <Button autoFocus onClick={handleClose}>
-                    Close
-                </Button>
-            </DialogActions>    
         </Dialog>
     )
 }

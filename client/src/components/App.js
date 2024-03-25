@@ -10,7 +10,6 @@ import FreshwaterFish from "./freshwater_fish/freshwater_fish.js";
 import PlantByID from "./plant_by_id/plant_by_id.js";
 import FishByID from "./fish_by_id/fish_by_id.js";
 import TankTester from "./tank_tester/tank_tester.js";
-import NavBar from "./navbar.js";
 import { OwnedFishContext } from "../context/ownedfish.js";
 
 
@@ -52,10 +51,10 @@ function App() {
     return (
       <>
         <Header />
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/plants' element={<Plants />} />
+            <Route path='/plants' element={<Plants render='standard'/>} />
             <Route path='/plants/:id' element={<PlantByID  />} />
             <Route path='/freshwater_fish' element={<FreshwaterFish />} />
             <Route path='/freshwater_fish/:id' element={<FishByID  />} />

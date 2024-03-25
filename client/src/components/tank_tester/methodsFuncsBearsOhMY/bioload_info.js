@@ -57,11 +57,6 @@ function BioloadInfo({ onDialogClose }){
                     </Box>
                 </DialogContentText>
             </DialogContent>
-            <DialogActions>
-                <Button autoFocus onClick={handleClose}>
-                    Close
-                </Button>
-            </DialogActions>
         </Dialog>
 
     )

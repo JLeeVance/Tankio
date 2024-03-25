@@ -36,19 +36,19 @@ function TankTile({
                         <Grid item xs={4} >
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant={'overline'} sx={{textDecoration:'underline'}}>
+                                    <Typography variant={'overline'} sx={{textDecoration:'underline', fontSize:'1.2vh', whiteSpace: 'nowrap'}}>
                                         Bioload 
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant={'overline'}>
+                                    <Typography variant={'overline'} sx={{fontSize:'1.15vh'}}>
                                         {number}
                                     </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid item xs={6}>
-                            <Typography noWrap variant={'overline'}>
+                            <Typography noWrap variant={'overline'} sx={{fontSize:'1.15vh'}}>
                                 {common}
                             </Typography>
                         </Grid>
@@ -62,19 +62,19 @@ function TankTile({
                 <CardContent>
                     <Grid container justifyContent={'center'} alignItems={'center'}>
                         <Grid item xs={6}>
-                            <Typography noWrap variant={'overline'}>
+                            <Typography noWrap variant={'overline'} sx={{fontSize:'1.15vh'}}>
                                 {common}
                             </Typography>
                         </Grid>
                         <Grid item xs={4} >
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant='overline' sx={{textDecoration:'underline'}}>
+                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.2vh'}}>
                                         Filtration
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant={'overline'}>
+                                    <Typography variant={'overline'} sx={{fontSize:'1.15vh'}}>
                                         {number}
                                     </Typography>
                                 </Grid>

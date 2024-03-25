@@ -44,7 +44,7 @@ export function DataCard({
     }
 
     return (
-        <Card>
+        <Card sx={{marginBottom:'5%'}}>
             <CardMedia
                 sx={{height:300}}
                 image={image}

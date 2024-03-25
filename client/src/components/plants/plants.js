@@ -9,10 +9,10 @@ import {
     Grid
 } from '@mui/material'
 
-function Plants(){
+function Plants({render}){
 
-    const { ownedPlants , setOwnedPlants } = useContext(OwnedPlantsContext)
     const { user } = useContext(UserContext)
+    const { ownedPlants , setOwnedPlants } = useContext(OwnedPlantsContext)
 
     const [ allPlants , setAllPlants ] = useState([])
 
@@ -87,22 +87,34 @@ function Plants(){
     })
    
     return (
-        <Container maxWidth={'xl'}>
-            <Snackbar
-                open={openSnackBar}
-                autoHideDuration={2000}
-                onClose={handleSnackbarClose}
-                message={snackbarMessage}
-                anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-            />
-            <Container>
-                <Typography variant='h3' align="center" sx={{marginBottom:'2%'}}>Aquatic Plants</Typography>
+            <Container maxWidth={'xl'} style={{
+                top:'10vh',
+                height:'100%',
+                overflow:'scroll',
+                position:'fixed',
+                left:'1vw',
+                right:'1vw',
+                marginTop:'3%',
+                backgroundColor:'white',
+                }}
+                >
+                <Snackbar
+                    open={openSnackBar}
+                    autoHideDuration={2000}
+                    onClose={handleSnackbarClose}
+                    message={snackbarMessage}
+                    anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+                />
+                <Container>
+                    <Typography variant='h3' align="center" sx={{marginBottom:'1.5%', marginTop:'1%'}}>Aquatic Plants</Typography>
+                </Container>
+                <Grid container spacing={3} maxWidth={'100%'} overflow='hidden' marginBottom={'15%'}>
+                    {dataCards}
+                </Grid>
             </Container>
-            <Grid container spacing={3} maxWidth={'auto'}>
-                {dataCards}
-            </Grid>
-        </Container>
-        )
+    )
 }
 
 export default Plants
+
+// FontSize per vh header / menu

@@ -87,7 +87,16 @@ function FreshwaterFish(){
     })
   
     return(
-        <Container maxWidth={'xl'}>
+        <Container maxWidth={'xl'} style={{
+            top:'10vh',
+            height:'100%',
+            position:'fixed',
+            left:'1vw',
+            right:'1vw',
+            marginTop:'3%',
+            overflow:'scroll',
+            backgroundColor:'white',
+            }}>
             <Snackbar
                 open={openSnackBar}
                 autoHideDuration={2000}
@@ -96,9 +105,9 @@ function FreshwaterFish(){
                 anchorOrigin={{vertical: 'top', horizontal: 'right'}}
             />
             <Container>
-                <Typography variant='h3' align="center" sx={{marginBottom:'2%'}}>Freshwater Fish</Typography>
+                <Typography variant='h3' align="center" sx={{marginBottom:'1.5%', marginTop:'1%'}}>Freshwater Fish</Typography>
             </Container>
-            <Grid container spacing={3} maxWidth={'auto'}>
+            <Grid container spacing={3} maxWidth={'100%'} marginBottom={'15%'}>
                 {dataCards}
             </Grid>
         </Container>

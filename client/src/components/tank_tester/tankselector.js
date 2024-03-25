@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
 import {
     FormControl,
     FormLabel,
@@ -19,10 +17,8 @@ function TankSelector({ onTankSelect }){
         onTankSelect(value)
     }
 
-    
-
     return(
-        <FormControl fullWidth sx={{backgroundColor:'lightgrey', justifyItems:'center'}}>
+        <FormControl fullWidth sx={{backgroundColor:'lightgrey'}} style={{alignItems:'center'}}>
             <FormLabel id="tank_size_radio" sx={{textAlign:'center'}}><Typography variant='h6'>Tank Size</Typography></FormLabel>
                 <RadioGroup
                 row
@@ -30,13 +26,13 @@ function TankSelector({ onTankSelect }){
                 name="radio-buttons-group"
                 onChange={(e) => handleOnChange(e)}
                 >
-                    <Grid container spacing={2} justifyContent={'center'} textAlign={'center'}>
+                    
                     {tanks.map((label) => (
-                        <Grid item key={label}>
-                            <FormControlLabel value={label} control={<Radio />} label={label + ' gal'}/>
-                        </Grid>
+                        
+                            <FormControlLabel key={label} value={label} control={<Radio  />} label={label + ' gal'}/>
+                       
                     ))}
-                    </Grid>
+                    
             </RadioGroup>
         </FormControl>
     )
