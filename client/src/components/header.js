@@ -89,7 +89,6 @@ function Header(){
 
         <div
             style={{
-                backgroundColor: '#72D7E0',
                 height: '12vh',
                 position: 'fixed',
                 top: '1.5%',
@@ -99,17 +98,18 @@ function Header(){
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                backgroundColor: 'rgb(64, 162, 216, .4)'
             }}
             >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <IconButton size={'small'} onClick={toggleNav(true)} sx={{ textAlign: 'left', marginTop: 'none' }}>
+                <IconButton size={'small'} onClick={toggleNav(true)} sx={{ textAlign: 'left', marginTop: 'none', color:'rgb(63, 35, 5)'}}>
                 Menu
                 </IconButton>
                 <Drawer open={open} onClose={toggleNav(false)}>
                 {drawerList}
                 </Drawer>
             </div>
-            <Typography variant='h1' fontSize={'10vh'} >
+            <Typography variant='h1' fontSize={'10vh'} color={'rgb(63, 35, 5)'} >
                 Tankio
             </Typography>
             <div></div> {/* Placeholder for any additional content you might want to add */}

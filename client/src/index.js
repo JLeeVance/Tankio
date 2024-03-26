@@ -10,6 +10,7 @@ import { OwnedFishProvider } from "./context/ownedfish";
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
+<div style={{backgroundColor:'rgba(249, 247, 240)'}}>  
     <React.StrictMode>
         <Router>
             <UserProvider>
@@ -21,4 +22,6 @@ root.render(
             </UserProvider>
         </Router>
     </React.StrictMode>
+</div>
+
 );

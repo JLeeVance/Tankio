@@ -2,12 +2,10 @@ import { useEffect , useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
     Box,
-    Container,
     Grid,
     Typography,
-    Paper,
     Divider,
-    Button
+    IconButton
 } from '@mui/material'
 
 function FishByID(){
@@ -41,73 +39,192 @@ function FishByID(){
             nav(`/freshwater_fish/${previousID}`)
         }
     }
-
     if(!singleFish){
         return <p>Loading</p>
     }
+
     return (
-        <Grid container maxWidth={'xl'} sx={{justifyContent:'center'}}>
-        <Grid item xs={12} sx={{textAlign:'right'}}>
-            <Button onClick={handlePreviousClick}>
-                Previous Fish
-            </Button>
-            <Button onClick={handleNextClick}>
-                Next Fish
-            </Button>
-        </Grid>
-        <Grid item xs={12}>
-            <Grid container>
-                <Grid item xs={5} >
-                    <Container component={'img'} src={singleFish.image} />
+       
+            <Grid 
+                container 
+                style={{
+                    top:'10.5vh',
+                    height:'84vh',
+                    width:'92vw',
+                    position:'fixed',
+                    left:'1vw',
+                    right:'1vw',
+                    marginTop:'3%',
+                    backgroundColor:'rgba(249, 247, 240, .2)',
+                    justifyContent:'center'
+                }}>
+                <Grid item xs={12} sx={{textAlign:'right'}}>
+                    <IconButton 
+                        style={{
+                            fontSize:'2vh', 
+                            color:'rgb(63, 35, 5, .6)'
+                            }} 
+                        onClick={handlePreviousClick}
+                        >
+                        Previous Fish
+                    </IconButton>
+                    <IconButton 
+                        style={{
+                            fontSize:'2vh', 
+                            color:'rgb(63, 35, 5, .6)'
+                            }} 
+                        onClick={handleNextClick}
+                        >
+                        Next Fish
+                    </IconButton>
                 </Grid>
-                <Grid item xs={7}>
-                    <Box bgcolor={'lightgrey'} padding={'3%'} maxWidth={'100%'}>
-                        <Typography variant='h2' noWrap sx={{textAlign:'center', maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis'}}>
-                            {singleFish.common_name}
-                        </Typography>
-                        <Divider sx={{marginBottom:'10px'}}/>
-                        <Typography variant='h5'  margin={'1%'} sx={{textAlign:'center'}}>
-                            Scientific Name: <em>{singleFish.common_name}</em>
-                        </Typography>
-                        <Typography variant='h6' sx={{textDecoration:'underline'}}>
-                            Origin
-                        </Typography>
-                        <Typography variant='subtitle1'>
-                            {singleFish.origin}
-                        </Typography>
-                        <Typography variant='h6' sx={{textDecoration:'underline'}}>
-                            Care Difficulty
-                        </Typography>
-                        <Typography variant='subtitle1'>
-                            {singleFish.care_level}
-                        </Typography>
-                        <Typography variant='h6' sx={{textDecoration:'underline'}}>
-                            Maximum Size
-                        </Typography>
-                        <Typography variant='subtitle1'>
-                            {singleFish.max_size}
-                        </Typography>
-                        <Typography variant='h6' sx={{textDecoration:'underline'}}>
-                            Ph Range
-                        </Typography>
-                        <Typography variant='subtitle1'>
-                            {singleFish.ph_range}
+                <Grid item xs={12} width={'100%'}>
+                    <Grid container>
+                        <Grid item xs={5} style={{height:'50vh', padding:'.25%'}}>
+                            <img src={singleFish.image} height={'100%'} width={'100%'}/>
+                        </Grid>
+                        <Grid item xs={7} style={{height:'48vh'}}>
+                            <Grid 
+                                container 
+                                padding={'2%'} 
+                                maxWidth={'100%'} 
+                                height={'100%'} 
+                                textAlign={'center'}
+                                >
+                                <Grid item xs={12}>
+                                    <Typography 
+                                        variant='h2' 
+                                        noWrap 
+                                        sx={{
+                                            textAlign:'center', 
+                                            maxWidth: '100%', 
+                                            fontSize:'4.5vh', 
+                                            color:'rgb(63, 35, 5)'
+                                            }}
+                                        >
+                                        {singleFish.common_name}
+                                    </Typography>
+                                    <Divider 
+                                        width={'98%'} 
+                                        style={{
+                                            marginBottom:'4%',
+                                            backgroundColor: 'rgb(63, 35, 5)', 
+                                            height: '2px' 
+                                            }}
+                                            />
+                                    <Typography 
+                                        variant='inherit' 
+                                        style={{
+                                            textAlign:'center', 
+                                            maxWidth:'100%', 
+                                            fontSize:'2vh', 
+                                            color:'rgb(63, 35, 5)'
+                                            }}
+                                            >
+                                        Scientific Name: <em>{singleFish.scientific_name}</em>
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12} width={'100%'}>
+                                    <Typography 
+                                        variant='h1' 
+                                        sx={{
+                                            textDecoration:'underline', 
+                                            fontSize:'2.2vh', 
+                                            textAlign:'center', 
+                                            marginBottom:'3%', 
+                                            color:'rgb(63, 35, 5)'
+                                            }}
+                                            >
+                                        Origin
+                                    </Typography>
+                                    <Typography 
+                                        variant='h2' 
+                                        sx={{
+                                            fontSize:'1.6vh', 
+                                            textAlign:'center',
+                                            color:'rgb(63, 35, 5, .8)'
+                                            }}
+                                            >
+                                        {singleFish.origin}
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Grid container>
+                                        <Grid item xs={6} sx={{textAlign:'center'}}>
+                                            <Typography 
+                                                variant='h1' 
+                                                sx={{
+                                                    textDecoration:'underline', 
+                                                    fontSize:'2.2vh', 
+                                                    marginBottom:'3%', 
+                                                    color:'rgb(63, 35, 5)'
+                                                    }}
+                                                    >
+                                                pH Range
+                                            </Typography>
+                                            <Typography 
+                                                variant='h2' 
+                                                sx={{
+                                                    fontSize:'1.8vh', 
+                                                    color:'rgb(63, 35, 5, .8)'
+                                                    }}
+                                                    >
+                                                {singleFish.ph_range}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={6} sx={{textAlign:'center'}}>
+                                            <Typography 
+                                                variant='h1' 
+                                                sx={{
+                                                    textDecoration:'underline', 
+                                                    fontSize:'2.2vh', 
+                                                    marginBottom:'3%', 
+                                                    color:'rgb(63, 35, 5)'
+                                                    }}
+                                                    >
+                                                Max Size - inch
+                                            </Typography>
+                                            <Typography variant='h2' sx={{fontSize:'1.8vh', color:'rgb(63, 35, 5, .8)'}}>
+                                                {singleFish.max_size}
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid item={12} style={{justifyContent:'center', textAlign:'center', width:'100%'}}>
+                                    <Typography 
+                                        variant='h1' 
+                                        style={{
+                                            textDecoration:'underline', 
+                                            fontSize:'2.2vh', 
+                                            textAlign:'center', 
+                                            color:'rgb(63, 35, 5)'
+                                            }}
+                                        >
+                                        Care Difficulty
+                                    </Typography>
+                                    <Typography 
+                                        variant='h2' 
+                                        style={{
+                                            fontSize:'1.8vh', 
+                                            color:'rgb(63, 35, 5, .8)', 
+                                            textAlign:'center'
+                                            }
+                                        }>
+                                        {singleFish.care_level}
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} style={{ textAlign:'center' }}>
+                    <Box bgcolor={'rgba(249, 247, 240, .4)'} padding={'2%'}>
+                        <Typography variant='body1' fontSize={'1.6vh'} sx={{color:'rgb(63, 35, 5)'}}>
+                            {singleFish.bio}
                         </Typography>
                     </Box>
                 </Grid>
             </Grid>
-        </Grid>
-        <Grid marginTop={'1%'}>
-            <Grid item xs={12}>
-                <Box bgcolor={'lightgrey'} padding={'2%'}>
-                    <Typography variant='body2'>
-                        {singleFish.bio}
-                    </Typography>
-                </Box>
-
-            </Grid>
-        </Grid>
-    </Grid>
     )
 }
 

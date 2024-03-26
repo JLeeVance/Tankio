@@ -6,7 +6,8 @@ import {
     Container, 
     Typography,
     Snackbar,
-    Grid
+    Grid,
+    
 } from '@mui/material'
 
 function FreshwaterFish(){
@@ -52,9 +53,9 @@ function FreshwaterFish(){
         } else {
             setSnackbarMessage('There was an error adding your profile')
             setOpenSnackBar(true)
-        }
-    })
-}
+        }}
+        )
+    }
 
     const deleteOwnedFish = (fish_id, common) => {
         const fishToRemove = ownedFish.find((fish) => fish.fish_id === fish_id && fish.user_id === user.id)
@@ -93,23 +94,41 @@ function FreshwaterFish(){
             position:'fixed',
             left:'1vw',
             right:'1vw',
-            marginTop:'3%',
+            marginTop:'3.5%',
             overflow:'scroll',
-            backgroundColor:'white',
-            }}>
+            backgroundColor:'rgb(255, 255, 254)'
+            }}
+            >
             <Snackbar
                 open={openSnackBar}
                 autoHideDuration={2000}
                 onClose={handleSnackbarClose}
                 message={snackbarMessage}
-                anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-            />
-            <Container>
-                <Typography variant='h3' align="center" sx={{marginBottom:'1.5%', marginTop:'1%'}}>Freshwater Fish</Typography>
-            </Container>
-            <Grid container spacing={3} maxWidth={'100%'} marginBottom={'15%'}>
-                {dataCards}
-            </Grid>
+                anchorOrigin={{
+                    vertical: 'top', 
+                    horizontal: 'right'
+                }}
+                />
+                <Container>
+                    <Typography 
+                        variant='h3' 
+                        align="center" 
+                        sx={{marginBottom:'1.5%', 
+                        marginTop:'1%', 
+                        color: 'rgb(63, 35, 5)'
+                        }}
+                        >
+                        Freshwater Fish
+                    </Typography>
+                </Container>
+                <Grid 
+                    container 
+                    spacing={3} 
+                    maxWidth={'100%'}
+                    marginBottom={'15%'}
+                    >
+                    {dataCards}
+                </Grid>
         </Container>
         )
 }

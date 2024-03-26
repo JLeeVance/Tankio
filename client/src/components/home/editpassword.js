@@ -5,7 +5,8 @@ import {
     FormControl,
     Button,
     TextField,
-    Typography
+    Typography,
+    IconButton
 } from '@mui/material'
 
 function EditPassword({ user, onSuccess, onFail }){
@@ -82,7 +83,7 @@ function EditPassword({ user, onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={passformik.handleSubmit}
                 >
-                <Typography variant='overline' sx={{textDecoration:'underline'}}>New Password</Typography>
+                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>New Password</Typography>
                 <TextField
                     required
                 
@@ -91,7 +92,7 @@ function EditPassword({ user, onSuccess, onFail }){
                     onChange={passformik.handleChange}
                     value={passformik.values.password}
                     />
-                <Button type='submit'>Submit</Button>
+                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
             </FormControl> 
             :
             <FormControl
@@ -101,7 +102,7 @@ function EditPassword({ user, onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={authformik.handleSubmit}
                 >
-                <Typography variant='overline' sx={{textDecoration:'underline'}}>Current Password</Typography>
+                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>Current Password</Typography>
                 <TextField
                     required
                     
@@ -110,7 +111,7 @@ function EditPassword({ user, onSuccess, onFail }){
                     onChange={authformik.handleChange}
                     value={authformik.values.password}
                     />
-                <Button type='submit'>Submit</Button>
+                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
             </FormControl>
             }
         </>

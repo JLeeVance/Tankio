@@ -4,7 +4,8 @@ import {
     FormControl,
     Button,
     TextField,
-    Typography
+    Typography,
+    IconButton
 } from '@mui/material'
 
 function EditFirst({ id , onSuccess, onFail }){
@@ -47,16 +48,15 @@ function EditFirst({ id , onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={formik.handleSubmit}
                 >
-                <Typography variant='overline' sx={{textDecoration:'underline'}}>First Name</Typography>
+                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>First Name</Typography>
                 <TextField
                     required
                     label='First Name'
                     name='first_name'
                     onChange={formik.handleChange}
                     value={formik.values.first_name}
-                    helperText='required *'
                     />
-                <Button type='submit'>Submit</Button>
+                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
             </FormControl>
         </>
     )

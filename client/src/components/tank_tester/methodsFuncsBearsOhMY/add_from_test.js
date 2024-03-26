@@ -22,14 +22,15 @@ function AddFromTest({ onAddFromTestClose, type}){
             open={open}
             maxWidth='md'
             onClose={handleClose}
-            >  
+            >
                 <FreshwaterFish/>
             </Dialog>
         )
-    } else if(type === 'plant'){
+    }else if(type === 'plant'){
         return(
             <Dialog
             open={open}
+            maxWidth='md'
             onClose={handleClose}
             >
                 <Plants/>

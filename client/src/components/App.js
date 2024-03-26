@@ -34,22 +34,24 @@ function App() {
         setUser(null)
       }
     })
-  }, [])
+  }, [ownedPlants, ownedFish])
 
   function updateUser(user){
     setUser(user)
+    setOwnedFish(user.ownedfishes)
+    setOwnedPlants(user.ownedplants)
   }
 
   if (!user){
     return (
-      <>
+      <> 
         <Header />
         <LogInHome  updateUser={updateUser}/>
       </>
     )
   } else {
     return (
-      <>
+      <div style={{backgroundColor:'rgba(249, 247, 240)'}}>
         <Header />
         {/* <NavBar /> */}
         <Routes>
@@ -60,7 +62,7 @@ function App() {
             <Route path='/freshwater_fish/:id' element={<FishByID  />} />
             <Route path='/tanktester' element={<TankTester  />}  />
         </Routes>
-      </>
+      </div>
     )
   }
 }
