@@ -22,3 +22,58 @@
   margin-top: 0;
 }
 
+
+/* {
+  'back': '#F9F7F0',
+  'teal': '#BACEC1',
+  'blue': '#072A40',
+  'skyblue': '#A3B4C8',
+  'waterblue': '#18B7B3'
+} */
+
+.background {
+  background-color: rgba(249, 247, 240);
+}
+
+.teal {
+  background-color: rgba(186, 206, 193);
+}
+
+.blue {
+  background-color: rgb(22, 80, 116);
+}
+
+.skyblue {
+  background-color: rgba(163, 180, 200);
+}
+
+.waterblue {
+  background-color: rgba(24, 183, 179, .4);
+}
+
+.pink {
+  background-color: rgba(224, 71, 91, 0.5) ;
+}
+
+
+
+.brown {
+  color: rgb(52, 38, 5, .8)
+}
+
+.tankGreen {
+  color: rgba(118, 136, 91)
+}
+
+.tankGreenDarker {
+  color: rgb(79, 92, 60)
+}
+
+.tankBlue {
+  color: rgb(64, 162, 216)
+}
+
+.tankblueDarker {
+  color: rgb(20, 99, 142)
+}
+

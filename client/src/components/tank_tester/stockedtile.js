@@ -41,18 +41,18 @@ function StockedTile({
     return(
         <>
         {fish?
-            <Card raised sx={{maxWidth:'98%', maxHeight:'22.5%', margin:'1%'}}>
+            <Card raised style={{maxWidth:'98%', height:'11.5vh', margin:'1.25%', marginBottom:'2%', backgroundColor:'rgb(255, 255, 254)', boxShadow: '5px 5px 10px rgb(20, 99, 142)'}}>
                 <CardContent sx={{ display: 'flex'}}>
                     <Grid container maxWidth={'100%'}>
                         <Grid item xs={3}>
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.1vh'}}>
+                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.1vh', color:'rgb(20, 99, 142)'}}>
                                         Bioload
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant='overline' style={{fontSize:'1.1vh'}}>
+                                    <Typography variant='overline' style={{fontSize:'1.1vh', color:'rgb(20, 99, 142)'}}>
                                         {object.bioload} 
                                     </Typography>
                                 </Grid>
@@ -61,19 +61,19 @@ function StockedTile({
                         <Grid item xs={7}>
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant='h6' style={{fontSize:'1.5vh'}}>
+                                    <Typography variant='h1' style={{fontSize:'1.54vh', color:'rgb(20, 99, 142)'}}>
                                         {object.common_name}
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'flex-end', marginTop:'5%'}}>
-                                    <Typography xs={{textDecoration:'underline'}} style={{fontSize:'1.2vh'}}>
+                                    <Typography xs={{textDecoration:'underline'}} style={{fontSize:'1.3vh', color:'rgb(20, 99, 142)'}}>
                                         Stocked: {count}
                                     </Typography>
                                     <div style={{flexDirection:'row'}}>
-                                        <IconButton size={'small'} onClick={increaseCount} style={{fontSize:'1.85vh'}}>
+                                        <IconButton size={'small'} onClick={increaseCount} style={{fontSize:'1.85vh', color:'rgb(20, 99, 142)'}}>
                                             +
                                         </IconButton>
-                                        <IconButton size={'small'} onClick={decreaseCount} style={{fontSize:'1.85vh'}}>
+                                        <IconButton size={'small'} onClick={decreaseCount} style={{fontSize:'1.85vh', color:'rgb(20, 99, 142)'}}>
                                             -
                                         </IconButton>
                                     </div>
@@ -81,7 +81,7 @@ function StockedTile({
                             </Grid>
                         </Grid>
                         <Grid item xs={1}>
-                            <IconButton size={'small'} style={{fontSize:'2vh'}} onClick={handleRemoveClick}>
+                            <IconButton size={'small'} style={{fontSize:'2vh', color:'rgb(20, 99, 142)'}} onClick={handleRemoveClick}>
                                 x
                             </IconButton>
                         </Grid>
@@ -89,11 +89,11 @@ function StockedTile({
                 </CardContent>
             </Card>
             :
-            <Card raised sx={{maxWidth:'98%', maxHeight:'22.5%', margin:'1%'}}>
+            <Card raised style={{maxWidth:'98%', height:'11.5vh', margin:'1.25%', marginTop:'2%', backgroundColor:'rgb(255, 255, 254)', boxShadow: '-5px 5px 10px rgb(79, 92, 60)'}}>
                 <CardContent sx={{ display: 'flex'}}>
                     <Grid container maxWidth={'100%'}>
                         <Grid item xs={1}>
-                            <IconButton size={'small'} style={{fontSize:'2vh'}} onClick={handleRemoveClick}>
+                            <IconButton size={'small'} sx={{fontSize:'2vh', color:'rgb(79, 92, 60)'}} onClick={handleRemoveClick}>
                                 x
                             </IconButton>
                         </Grid>
@@ -101,19 +101,20 @@ function StockedTile({
                         <Grid item xs={7}>
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant='h6' style={{fontSize:'1.5vh'}}>
+                                    <Typography variant='h1' style={{fontSize:'1.54vh', color:'rgb(79, 92, 60)'}}>
                                         {object.common_name}
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent:'flex-end', marginTop:'5%'}}>
-                                    <Typography xs={{textDecoration:'underline'}} style={{fontSize:'1.2vh'}}>
+                                    <Typography xs={{textDecoration:'underline'}} style={{fontSize:'1.3vh', color:'rgb(79, 92, 60)'}}>
                                         Stocked: {count}
                                     </Typography>
                                     <div style={{flexDirection:'row'}}>
-                                        <IconButton size={'small'} onClick={increaseCount} style={{fontSize:'1.85vh'}}>
+                                        <IconButton size={'small'} onClick={increaseCount} style={{fontSize:'1.85vh', color:'rgb(79, 92, 60)'}}>
                                             +
                                         </IconButton>
-                                        <IconButton size={'small'} onClick={decreaseCount} style={{fontSize:'1.85h'}}>
+                                        <IconButton size={'small'} onClick={decreaseCount} style={{fontSize:'1.85h', color:'rgb(79, 92, 60)'}}
+                                        >
                                             -
                                         </IconButton>
                                     </div>
@@ -124,12 +125,12 @@ function StockedTile({
                         <Grid item xs={3}>
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.1vh'}}>
+                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.1vh', color:'rgb(79, 92, 60)'}}>
                                         Filtration
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant='overline' style={{fontSize:'1.1vh'}}>
+                                    <Typography variant='overline' style={{fontSize:'1.1vh', color:'rgb(79, 92, 60)'}}>
                                         {object.filtration} 
                                     </Typography>
                                 </Grid>

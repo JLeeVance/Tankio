@@ -23,18 +23,18 @@ function EditAccount({ user , onSuccess, onFail }){
     return (
     <>
         <FormControl>
-            <FormLabel id='manage-account-radio'>Manage Account</FormLabel>
+            <FormLabel id='manage-account-radio' sx={{textAlign:'center', marginBottom:'1%', marginTop:'2%', color:'rgba(7, 42, 64, .7)'}}>What would you like to change?</FormLabel>
             <RadioGroup
                 row
                 name='manage-account-radio'
-                sx={{textAlign:'center'}}
+                sx={{textAlign:'center', justifyContent:'space-evenly'}}
                 onChange={(e) => handleEditSelection(e)}
             >
-                <FormControlLabel value='first_name' control={<Radio />} label='First Name' />
-                <FormControlLabel value='last_name' control={<Radio />} label='Last Name' />
-                <FormControlLabel value='username' control={<Radio />} label='Username' />
-                <FormControlLabel value='password' control={<Radio />} label='Password' />
-                <FormControlLabel value='bio' control={<Radio />} label='Bio' />
+                <FormControlLabel as={'h1'} value='first_name' control={<Radio />} label='First Name' />
+                <FormControlLabel as={'h1'} value='last_name' control={<Radio />} label='Last Name' />
+                <FormControlLabel as={'h1'} value='username' control={<Radio />} label='Username' />
+                <FormControlLabel as={'h1'} value='password' control={<Radio />} label='Password' />
+                <FormControlLabel as={'h1'} value='bio' control={<Radio />} label='Bio' />
             </RadioGroup>
         </FormControl>
          {editValue === 'first_name' && <EditFirst id={user.id} onSuccess={onSuccess} onFail={onFail}/>}

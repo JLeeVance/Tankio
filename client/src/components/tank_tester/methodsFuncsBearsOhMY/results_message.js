@@ -1,7 +1,5 @@
 import { 
-    Button, 
     Dialog, 
-    DialogActions, 
     DialogContent, 
     DialogContentText, 
     DialogTitle,
@@ -10,7 +8,6 @@ import {
     List,
     ListItem,
     ListItemText,
-    ListSubheader,
     Typography
  } from '@mui/material'
 import { useState, useContext } from 'react'
@@ -57,7 +54,7 @@ function ResultsMessage({
                 return (
                     <ListItem key={name} style={{justifyContent:'center'}}>
                         <ListItemText>
-                            <Typography fontSize={'1.5vh'}>
+                            <Typography fontSize={'1.5vh'} color={{color:'rgb(79, 92, 60)'}}>
                             {name} | {count}
                             </Typography>
                         </ListItemText>
@@ -76,7 +73,7 @@ function ResultsMessage({
             sx={{maxHeight:'100%'}}
             onClose={handleClose}
         >
-            <DialogTitle variant='h4' sx={{textAlign:'center', padding:'3%'}}>
+            <DialogTitle variant='h4' sx={{textAlign:'center', padding:'3%', color:'rgb(63, 35, 5)'}}>
                 Results for User: {user.username}
             </DialogTitle>
 
@@ -85,37 +82,32 @@ function ResultsMessage({
                 <DialogContentText>
                     <Grid container maxWidth={'100%'}>
                         <Grid item xs={12} sx={{textAlign:'left', paddingLeft:'5%', paddingRight:'5%', paddingBottom:'6%'}}>
-                            <Typography variant='subtitle1' fontSize={'1.5vh'}>
+                            <Typography variant='subtitle1' fontSize={'1.5vh'} style={{color:'rgb(63, 35, 5, .7)'}}>
                                 {results_message}
                             </Typography>
 
                         </Grid>
                         <Divider/>
                         <Grid item xs={6} alignItems={'center'} justifyContent={'center'} sx={{textAlign:'center'}}>
-                            <Typography variant='h5'>
+                            <Typography variant='h5' style={{color:'rgb(63, 35, 5)'}}>
                                 Stocked Plants
                             </Typography>
                             <Divider/>
                             {produceStockedList(stockedPlantNames)}
                         </Grid>
                         <Grid item xs={6} alignItems='center' justifyContent={'center'} sx={{textAlign:'center'}}>
-                            <Typography variant='h5'>
+                            <Typography variant='h5' style={{color:'rgb(63, 35, 5)'}}>
                                 Stocked Fish
                             </Typography>
                             <Divider/>
                             {produceStockedList(stockedFishNames)}
                         </Grid>
                     </Grid>
-                    <Typography fontSize={'2vh'} sx={{textAlign:'center'}}>
+                    <Typography fontSize={'2vh'} sx={{textAlign:'center', color:'rgb(20, 99, 142)'}}>
                         Tank Size: {tank.size} Gal
                     </Typography>
                 </DialogContentText>
             </DialogContent>
-            <DialogActions>
-                <Button autoFocus onClick={handleClose}>
-                    Close
-                </Button>
-            </DialogActions>
         </Dialog>
     )
 }

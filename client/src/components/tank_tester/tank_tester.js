@@ -3,7 +3,6 @@ import {
     Grid,
     Typography,
     IconButton,
-    Icon,
     Container,
 } from '@mui/material'
 import { OwnedPlantsContext } from '../../context/ownedplants'
@@ -201,15 +200,14 @@ function TankTester(){
     }
     
     function runTest(){
-        console.log('hit')
-        console.log(chosenTank)
-        console.log(fishTestCountDic)
-        console.log(plantTestCountDic)
-        console.log(stockedFish)
-        console.log(stockedPlants)
+        // console.log('hit')
+        // console.log(chosenTank)
+        // console.log(fishTestCountDic)
+        // console.log(plantTestCountDic)
+        // console.log(stockedFish)
+        // console.log(stockedPlants)
 
-
-        let fishImpact = getFishTotalBioload(fishTestCountDic, stockedFish)  // Negative Num
+        let fishImpact = getFishTotalBioload(fishTestCountDic, stockedFish)
         let plantImprovement = getPlantTotalImprovement(plantTestCountDic, stockedPlants)
 
         const benchmarker = chosenTank.maximum_bioload
@@ -242,29 +240,75 @@ function TankTester(){
     
     return (
    
-            <Grid container style={{height:'78vh', backgroundColor: 'lightgrey', position:'fixed', top:'10vh', marginTop:'4%', justifyContent:'center'}}>
-                {message.length > 0 && <ResultsMessage 
-                                            results_message={message} 
-                                            onResultClose={resetMessage} 
-                                            stockedFish={stockedFish} 
-                                            stockedPlants={stockedPlants} 
-                                            tank={chosenTank}
-                                            plantTestCountDic={plantTestCountDic}
-                                            fishTestCountDic={fishTestCountDic}/>
-                                            }
-                <Grid item xs={12} textAlign={'center'} sx={{padding:'.25%'}}>
+            <Grid 
+                container 
+                style={{
+                    height:'78vh', 
+                    backgroundColor: 'rgba(249, 247, 240, .2)', 
+                    position:'fixed', 
+                    top:'10vh', 
+                    marginTop:'3%', 
+                    justifyContent:'center',
+                    left:.1,
+                    right:.1
+
+                    }}
+                    >
+                    {message.length > 0 && <ResultsMessage 
+                                                results_message={message} 
+                                                onResultClose={resetMessage} 
+                                                stockedFish={stockedFish} 
+                                                stockedPlants={stockedPlants} 
+                                                tank={chosenTank}
+                                                plantTestCountDic={plantTestCountDic}
+                                                fishTestCountDic={fishTestCountDic}/>
+                                                }
+                <Grid 
+                    item 
+                    xs={12} 
+                    textAlign={'center'} 
+                    sx={{padding:'.25%'}}
+                    >
                     <Grid container>
                         <Grid item xs={2}>
-                            <IconButton size={'small'} onClick={handleShowFiltrationInfo} sx={{fontSize:'2vh', top:'120%', bottom:0, left:-10}}>
+                            <IconButton 
+                                size={'small'} 
+                                onClick={handleShowFiltrationInfo} 
+                                sx={{
+                                    fontSize:'2.25vh', 
+                                    top:'120%',
+                                    color:'rgb(79, 92, 60)', 
+                                    bottom:0, 
+                                    left:-10
+                                    }}
+                                >
                                 Filtration Info
                             </IconButton>
                             {showFiltrationInfo && <FiltrationInfo onDialogClose={handleCloseFiltrationInfo}/>}
                         </Grid>
                         <Grid item xs={8}>
-                            <Typography variant='h4' fontSize={'3vh'} sx={{textDecoration:'underline'}}>TankTester</Typography>
+                            <Typography 
+                                variant='h4' 
+                                fontSize={'3.5vh'} 
+                                sx={{
+                                    color:'rgb(63, 35, 5)' 
+                                    }}
+                                >
+                                TankTester
+                            </Typography>
                         </Grid>
                         <Grid item xs={2}>
-                            <IconButton size={'small'} onClick={handleShowBioInfo} sx={{fontSize:'2vh', top:'120%', bottom:0, left:10}}>
+                            <IconButton 
+                                size={'small'} 
+                                onClick={handleShowBioInfo} 
+                                sx={{
+                                    fontSize:'2.25vh', 
+                                    top:'120%',
+                                    bottom:0, 
+                                    left:10,
+                                    color:'rgb(20, 99, 142)', 
+                                    }
+                                }>
                                 Bioload Info
                             </IconButton>
                             {showBioInfo && <BioloadInfo onDialogClose={handleCloseBioInfo}/>}
@@ -272,69 +316,201 @@ function TankTester(){
                     </Grid>
                 </Grid>
                 <Grid item xs={12} textAlign={'center'}>
-                    <IconButton sx={{fontSize:'2.8vh'}} variant='h4' onClick={handleShowInstructions}>
+                    <IconButton 
+                        sx={{
+                            fontSize:'2.8vh',
+                            color:'rgb(63, 35, 5, .8)' 
+                        }} 
+                        variant='h4' 
+                        onClick={handleShowInstructions}
+                        >
                         Instructions
                     </IconButton >
                     {showInstructions && <Instructions onInstructionsClose={handleCloseInstructoins} />}
                 </Grid>
                 <Grid container maxWidth={'100%'}>
-                    <Grid item xs={3} textAlign={'left'} padding={'1%'}>    
-                        <Typography variant='h6' sx={{fontSize:'3.2vh', textDecoration:'underline', textAlign:'center', marginBottom:'2%'}}>Your Plants</Typography>
-                        <div style={{ overflow: 'scroll', height:'60vh', backgroundColor:'grey', padding:'1%'}}>
+                    <Grid 
+                        item xs={3} 
+                        textAlign={'left'} 
+                        padding={'1%'}
+                        >    
+                        <Typography 
+                            variant='h6' 
+                            sx={{
+                                fontSize:'3.2vh', 
+                                textDecoration:'underline', 
+                                textAlign:'center', 
+                                marginBottom:'2%',
+                                color: 'rgb(79, 92, 60)' 
+                                }}
+                            >
+                            Your Plants
+                        </Typography>
+                        <div 
+                            style={{ 
+                                overflow: 'scroll', 
+                                height:'60vh', 
+                                backgroundColor:'RGB(118, 136, 91, .9)', 
+                                padding:'1%'
+                                }}
+                            >
                             {ownedPTile}
                         </div>
-                        <IconButton onClick={() => handleAddFromTest('plant')} sx={{fontSize:'1.9vh', top:'2.5%'}}>
+                        <IconButton 
+                            onClick={() => handleAddFromTest('plant')} 
+                            sx={{
+                                fontSize:'1.9vh', 
+                                top:'2.5%',
+                                color:'rgb(79, 92, 60)'
+                                }}
+                            >
                             Need More Plants?
                         </IconButton>
                         {showAddFromTest && <AddFromTest type={addType} onAddFromTestClose={handleCloseAddFromTest} />}
                     </Grid>
                     <Grid item xs={6} height={'50%'}>
-                        <Grid container maxWidth={'100%'} style={{height:'65vh', backgroundColor:'white', padding:'.75%'}} >
-                            <Grid item xs={12} padding={'1%'} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                        <Grid 
+                            container 
+                            maxWidth={'100%'} 
+                            style={{
+                                height:'65vh',
+                                padding:'.75%'
+                                }}
+                            >
+                            <Grid 
+                                item 
+                                xs={12} 
+                                padding={'1%'} 
+                                style={{
+                                    display: 'flex', 
+                                    flexDirection: 'row', 
+                                    alignItems: 'center'
+                                    }}
+                                >
                                 <TankSelector onTankSelect={handleTankSet} />
                             </Grid>
-
-                            <Grid item xs={5.75} style={{ textAlign: 'center', backgroundColor: 'lightgrey'}}>
-                                
-                                        <Typography variant='overline' sx={{ textDecoration: 'underline' }}>Stocked</Typography>
-                                        <Container style={{ padding: '1%', height:'50vh', overflow:'scroll'}}>
-                                            {stockedPlants}
-                                        </Container>
-                              
-                               
+                            <Grid 
+                                item 
+                                xs={5.75} 
+                                style={{ 
+                                    textAlign: 'center',
+                                    backgroundColor:'rgb(255, 255, 254)'
+                                }}
+                                >
+                                <Typography 
+                                    variant='overline' 
+                                    sx={{
+                                        textDecoration: 'underline',
+                                        color:'rgb(63, 35, 5)',
+                                        fontSize:'1.5vh' 
+                                        }}
+                                    >
+                                        Stocked
+                                </Typography>
+                                <Container 
+                                    style={{ 
+                                        padding: '1%', 
+                                        height:'50vh', 
+                                        overflow:'scroll'
+                                        }}
+                                    >
+                                    {stockedPlants}
+                                </Container>
                             </Grid>
-
-                            <Grid item xs={.5}></Grid>     
-
-                            <Grid item xs={5.75} sx={{textAlign:'center', backgroundColor:'lightgrey',  overflow: 'hidden'}}>
-
-                                <Typography variant='overline' sx={{ textDecoration: 'underline' }}>Stocked</Typography>
-                                <Container style={{ overflow: 'scroll', padding: '1%',  height:'50vh',}}>
+                            <Grid item xs={.5} bgcolor={'rgb(255, 255, 254)'}></Grid>     
+                            <Grid 
+                                item 
+                                xs={5.75} 
+                                sx={{ 
+                                    textAlign:'center', 
+                                    backgroundColor:'rgb(255, 255, 254)'
+                                }}
+                                >
+                                <Typography 
+                                    variant='overline' 
+                                    sx={{ 
+                                        textDecoration: 'underline',
+                                        color:'rgb(63, 35, 5)',
+                                        fontSize:'1.5vh' 
+                                        }}
+                                    >
+                                    Stocked
+                                </Typography>
+                                <Container 
+                                    style={{ 
+                                        overflow: 'scroll', 
+                                        padding: '1%',  
+                                        height:'50vh'
+                                    }}
+                                    >
                                     {stockedFish}
                                 </Container>
-                        
                             </Grid>
-
                         </Grid>
-                        <Grid item xs={12} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end' }}>
-                            <IconButton onClick={runTest} sx={{fontSize:'2.2vh', top:'1.5vh'}}>Run Tank Test</IconButton>
+                        <Grid 
+                            item 
+                            xs={12} 
+                            sx={{
+                                display: 'flex', 
+                                flexDirection: 'column', 
+                                alignItems: 'center', 
+                                justifyContent: 'flex-end'
+                                }
+                            }>
+                            <IconButton 
+                                onClick={runTest} 
+                                sx={{
+                                    fontSize:'2.2vh', 
+                                    top:'3.3vh',
+                                    color:'rgb(63, 35, 5)'
+                                    }}
+                                >
+                                Run Tank Test
+                            </IconButton>
                         </Grid>
                     </Grid>
-                    <Grid item xs={3} textAlign={'right'} padding={'1%'}>
-                        <Typography variant='h6' sx={{fontSize:'3.2vh', textDecoration:'underline', textAlign:'center', marginBottom:'2%'}}>Your Fish</Typography>
-                        <div style={{ overflow: 'scroll', height:'60vh', backgroundColor:'grey', padding:'1%'}}>
+                    <Grid 
+                        item 
+                        xs={3} 
+                        textAlign={'right'} 
+                        padding={'1%'}
+                        >
+                        <Typography 
+                            variant='h6'
+                            sx={{
+                                fontSize:'3.2vh', 
+                                textDecoration:'underline', 
+                                textAlign:'center', 
+                                marginBottom:'2%',
+                                color: 'rgb(20, 99, 142)' 
+                                }}
+                            >
+                            Your Fish
+                        </Typography>
+                        <div 
+                            style={{
+                                overflow: 'scroll', 
+                                height:'60vh', 
+                                backgroundColor: 'rgb(64, 162, 216, .3)', 
+                                padding:'1%'
+                                }}
+                            >
                             {ownedFTile}
                         </div>
-                        <IconButton onClick={() => handleAddFromTest('fish')} sx={{fontSize:'1.9vh', top:'2.5%'}}>
+                        <IconButton 
+                            onClick={() => handleAddFromTest('fish')} 
+                            sx={{
+                                fontSize:'1.9vh', 
+                                top:'2.5%',
+                                color:'rgb(20, 99, 142)'
+                                }}
+                            >
                             Need More Fish?
                         </IconButton>
                         {showAddFromTest && <AddFromTest type={addType} onAddFromTestClose={handleCloseAddFromTest} />}
                     </Grid>  
                 </Grid>
-
-
             </Grid>
-       
     )
 }
 

@@ -46,35 +46,49 @@ export function DataCard({
     return (
         <Card sx={{marginBottom:'5%'}}>
             <CardMedia
-                sx={{height:300}}
+                sx={{height:'25vh'}}
                 image={image}
                 title={common}
+                
             />
-            <CardContent>
+            <CardContent style={{backgroundColor:'rgba(249, 247, 240, .2)'}}>
                 <Box>
                     <Typography
                         variant='inherit' 
                         component='div'
                         align='left'
-                        fontSize={'x-large'}
+                        fontSize={'4vh'}
+                        style={{color:'rgb(63, 35, 5, .8)'}}
                         >
                             {common}
                     </Typography>
                 </Box>
-                <Typography variant='caption'>
+                <Typography variant='caption' style={{color:'rgb(63, 35, 5)', fontSize:'1.3vh'}}>
                     {scientific}
                 </Typography>
                 <CardActions>
-                    <Button variant='contained' onClick={handleLearnClick} sx={{fontSize:'small', bgcolor: 'lightgrey', '&:hover': { bgcolor: 'darkgrey' }}}  >Learn More</Button>
-                    <Button variant='contained' onClick={isOwned ? handleDeleteClick : handleAddClick} sx={{fontSize:'small', bgcolor: 'lightgrey', '&:hover': { bgcolor: 'darkgrey' }}}>{isOwned ? 'Remove from profile' : 'Add to profile'}</Button>
+                    <Button 
+                        variant='contained' 
+                        onClick={handleLearnClick} 
+                        sx={{
+                            fontSize:'small',
+                            bgcolor: 'rgb(64, 162, 216, .5)', 
+                            '&:hover': { bgcolor: 'rgba(7, 42, 64, .7)' }
+                        }}>
+                        Learn More
+                    </Button>
+                    <Button 
+                        variant='contained' 
+                        onClick={isOwned ? handleDeleteClick : handleAddClick} 
+                        sx={{
+                            fontSize:'small',  
+                            bgcolor: 'rgb(64, 162, 216, .5)', 
+                            '&:hover': { bgcolor: 'rgba(7, 42, 64, .7)'}
+                            }}>
+                        {isOwned ? 'Remove from profile' : 'Add to profile'}
+                    </Button>
                 </CardActions>
             </CardContent>
         </Card>
     )
 }
-
-/* 
-Need to use the Type sent in from plant.js to determine the line for the Learn more.
-Same with the fish.js. Need a type of 'fish'.
-Need to use the type for the fetch also when I set up the add to collection button
-*/

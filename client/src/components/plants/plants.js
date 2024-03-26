@@ -87,33 +87,54 @@ function Plants({render}){
     })
    
     return (
-            <Container maxWidth={'xl'} style={{
-                top:'10vh',
-                height:'100%',
-                overflow:'scroll',
-                position:'fixed',
-                left:'1vw',
-                right:'1vw',
-                marginTop:'3%',
-                backgroundColor:'white',
-                }}
+            <Container 
+                maxWidth={'xl'} 
+                style={{
+                    top:'10vh',
+                    height:'100%',
+                    overflow:'scroll',
+                    position:'fixed',
+                    left:'1vw',
+                    right:'1vw',
+                    marginTop:'3.8%',
+                    backgroundColor:'rgb(255, 255, 254)'
+                    }}
                 >
                 <Snackbar
                     open={openSnackBar}
                     autoHideDuration={2000}
                     onClose={handleSnackbarClose}
                     message={snackbarMessage}
-                    anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-                />
+                    anchorOrigin={{
+                        vertical: 'top', 
+                        horizontal: 'right'
+                    }}
+                    />
                 <Container>
-                    <Typography variant='h3' align="center" sx={{marginBottom:'1.5%', marginTop:'1%'}}>Aquatic Plants</Typography>
+                    <Typography 
+                        variant='h3' 
+                        align="center" 
+                        sx={{
+                            marginBottom:'1.5%', 
+                            marginTop:'1%', 
+                            color: 'rgb(63, 35, 5)' 
+                        }}
+                        >
+                        Aquatic Plants
+                    </Typography>
                 </Container>
-                <Grid container spacing={3} maxWidth={'100%'} overflow='hidden' marginBottom={'15%'}>
+                <Grid 
+                    container 
+                    spacing={3} 
+                    maxWidth={'100%'} 
+                    overflow='hidden' 
+                    marginBottom={'15%'}
+                    >
                     {dataCards}
                 </Grid>
             </Container>
-    )
-}
+            )
+    }
 
 export default Plants
 

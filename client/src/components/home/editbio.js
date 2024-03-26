@@ -4,7 +4,8 @@ import {
     FormControl,
     Button,
     TextField,
-    Typography
+    Typography,
+    IconButton
 } from '@mui/material'
 
 function EditBio({ id, onSuccess, onFail }){
@@ -48,16 +49,15 @@ function EditBio({ id, onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={formik.handleSubmit}
                 >
-                <Typography variant='overline' sx={{textDecoration:'underline'}}>Bio</Typography>
+                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>Bio</Typography>
                 <TextField
                     required
                     label='Bio'
                     name='bio'
                     onChange={formik.handleChange}
                     value={formik.values.bio}
-                    helperText='required *'
                     />
-                <Button type='submit'>Submit</Button>
+                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
             </FormControl>
         </>
     )

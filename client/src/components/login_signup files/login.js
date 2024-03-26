@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { 
@@ -8,6 +8,7 @@ import {
     FormControl,
     Snackbar,
 } from '@mui/material'
+import { UserContext } from '../../context/user';
 
 function Login({ updateUser , setHasAccount  }){
     const [ openSnackBar , setOpenSnackBar ] = useState(false)
@@ -42,8 +43,10 @@ function Login({ updateUser , setHasAccount  }){
             })
             .then((r) => {
                 if (r.ok){
-                    r.json().then((user) => {
-                        updateUser(user)
+                    r.json().then((userData) => {
+
+                        updateUser(userData)
+                        
                     })
                 } else if (r.status === 401 || r.status === 404 ){
                     setSnackbarMessage('Error: Authetication Failed.')

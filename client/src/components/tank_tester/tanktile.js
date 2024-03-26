@@ -29,26 +29,26 @@ function TankTile({
                 <CardContent>
                     <Grid container justifyContent={'center'} alignItems={'center'}>
                         <Grid item xs={2} margin={'-1%'}>
-                            <IconButton onClick={() => handleAddClick()}>
+                            <IconButton sx={{color:'rgb(20, 99, 142)', fontSize:'2.9vh'}} onClick={() => handleAddClick()}>
                                 +
                             </IconButton>
                         </Grid>
                         <Grid item xs={4} >
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant={'overline'} sx={{textDecoration:'underline', fontSize:'1.2vh', whiteSpace: 'nowrap'}}>
+                                    <Typography variant={'overline'} sx={{textDecoration:'underline', fontSize:'1.3vh', whiteSpace: 'nowrap'}}>
                                         Bioload 
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant={'overline'} sx={{fontSize:'1.15vh'}}>
+                                    <Typography variant={'overline'} sx={{fontSize:'1.2vh'}}>
                                         {number}
                                     </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid item xs={6}>
-                            <Typography noWrap variant={'overline'} sx={{fontSize:'1.15vh'}}>
+                            <Typography noWrap variant={'h1'} sx={{fontSize:'1.7vh'}}>
                                 {common}
                             </Typography>
                         </Grid>
@@ -62,26 +62,26 @@ function TankTile({
                 <CardContent>
                     <Grid container justifyContent={'center'} alignItems={'center'}>
                         <Grid item xs={6}>
-                            <Typography noWrap variant={'overline'} sx={{fontSize:'1.15vh'}}>
+                            <Typography noWrap variant={'h1'} sx={{fontSize:'1.7vh'}}>
                                 {common}
                             </Typography>
                         </Grid>
                         <Grid item xs={4} >
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.2vh'}}>
+                                    <Typography variant='overline' sx={{textDecoration:'underline', fontSize:'1.3vh'}}>
                                         Filtration
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Typography variant={'overline'} sx={{fontSize:'1.15vh'}}>
+                                    <Typography variant={'overline'} sx={{fontSize:'1.2vh'}}>
                                         {number}
                                     </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid item xs={2} margin={'-1%'}>
-                            <IconButton onClick={() => handleAddClick()}>
+                            <IconButton sx={{color:'rgb(79, 92, 60)', fontSize:'2.9vh'}} onClick={() => handleAddClick()}>
                                 +
                             </IconButton>
                         </Grid>
