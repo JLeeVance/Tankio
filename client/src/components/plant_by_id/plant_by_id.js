@@ -55,7 +55,6 @@ function PlantByID(){
                     left:'1vw',
                     right:'1vw',
                     marginTop:'3%',
-                    backgroundColor:'rgba(249, 247, 240, .2)',
                     justifyContent:'center'
                 }}>
                 <Grid item xs={12} sx={{textAlign:'right'}}>
@@ -80,8 +79,19 @@ function PlantByID(){
                 </Grid>
                 <Grid item xs={12} width={'100%'}>
                     <Grid container>
-                        <Grid item xs={5} style={{height:'52vh', padding:'1%'}}>
-                            <img src={singlePlant.image} height={'100%'} width={'100%'}/>
+                        <Grid 
+                            item 
+                            xs={5} 
+                            style={{
+                                height:'52vh', 
+                                padding:'1%'
+                                }}
+                            >
+                            <img 
+                                src={singlePlant.image}
+                                alt={singlePlant.common_name} 
+                                height={'100%'} 
+                                width={'100%'}/>
                         </Grid>
                         <Grid item xs={7} style={{height:'48vh'}}>
                             <Grid 
@@ -219,7 +229,13 @@ function PlantByID(){
                 </Grid>
                 <Grid item xs={12} style={{ textAlign:'center' }}>
                     <Box  padding={'2%'}>
-                        <Typography variant='body1' fontSize={'1.6vh'} sx={{color:'rgb(63, 35, 5)'}} >
+                        <Typography 
+                            variant='body1' 
+                            fontSize={'1.6vh'} 
+                            sx={{
+                                color:'rgb(63, 35, 5)'
+                                }}
+                            >
                             {singlePlant.bio}
                         </Typography>
                     </Box>

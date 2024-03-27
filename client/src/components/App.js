@@ -12,8 +12,6 @@ import FishByID from "./fish_by_id/fish_by_id.js";
 import TankTester from "./tank_tester/tank_tester.js";
 import { OwnedFishContext } from "../context/ownedfish.js";
 
-
-
 function App() {
 
   const { user , setUser } = useContext(UserContext)
@@ -51,18 +49,18 @@ function App() {
     )
   } else {
     return (
-      <div style={{backgroundColor:'rgba(249, 247, 240)'}}>
+      <>
         <Header />
         {/* <NavBar /> */}
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/plants' element={<Plants render='standard'/>} />
+            <Route path='/plants' element={<Plants />} />
             <Route path='/plants/:id' element={<PlantByID  />} />
             <Route path='/freshwater_fish' element={<FreshwaterFish />} />
             <Route path='/freshwater_fish/:id' element={<FishByID  />} />
             <Route path='/tanktester' element={<TankTester  />}  />
         </Routes>
-      </div>
+      </>
     )
   }
 }

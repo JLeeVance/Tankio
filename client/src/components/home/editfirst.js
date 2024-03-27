@@ -2,7 +2,6 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import {
     FormControl,
-    Button,
     TextField,
     Typography,
     IconButton
@@ -48,7 +47,16 @@ function EditFirst({ id , onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={formik.handleSubmit}
                 >
-                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>First Name</Typography>
+                <Typography 
+                    variant='h1' 
+                    sx={{
+                        textDecoration:'underline', 
+                        fontSize:'2.5vh', 
+                        paddingBottom:'2%'
+                        }}
+                    >
+                    First Name
+                </Typography>
                 <TextField
                     required
                     label='First Name'
@@ -56,7 +64,15 @@ function EditFirst({ id , onSuccess, onFail }){
                     onChange={formik.handleChange}
                     value={formik.values.first_name}
                     />
-                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
+                <IconButton 
+                    type='submit' 
+                    style={{
+                        fontSize:'2.5vh', 
+                        paddingBottom:'2%'
+                        }}
+                    >
+                    Submit
+                </IconButton>
             </FormControl>
         </>
     )

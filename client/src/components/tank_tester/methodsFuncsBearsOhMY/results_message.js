@@ -41,7 +41,6 @@ function ResultsMessage({
                 width: '100%',
                 overflow: 'auto',
                 height:'30vh',
-
                 }}
             >
             {array.map((name) => {
@@ -73,29 +72,58 @@ function ResultsMessage({
             sx={{maxHeight:'100%'}}
             onClose={handleClose}
         >
-            <DialogTitle variant='h4' sx={{textAlign:'center', padding:'3%', color:'rgb(63, 35, 5)'}}>
+            <DialogTitle 
+                variant='h4' 
+                sx={{
+                    textAlign:'center', 
+                    padding:'3%', 
+                    color:'rgb(63, 35, 5)'
+                    }}
+                >
                 Results for User: {user.username}
             </DialogTitle>
-
-           
             <DialogContent>
                 <DialogContentText>
                     <Grid container maxWidth={'100%'}>
-                        <Grid item xs={12} sx={{textAlign:'left', paddingLeft:'5%', paddingRight:'5%', paddingBottom:'6%'}}>
-                            <Typography variant='subtitle1' fontSize={'1.5vh'} style={{color:'rgb(63, 35, 5, .7)'}}>
+                        <Grid 
+                            item 
+                            xs={12} 
+                            sx={{
+                                textAlign:'left', 
+                                paddingLeft:'5%', 
+                                paddingRight:'5%', 
+                                paddingBottom:'6%'
+                            }}>
+                            <Typography 
+                                variant='subtitle1' 
+                                fontSize={'1.5vh'} 
+                                style={{color:'rgb(63, 35, 5, .7)'}}
+                                >
                                 {results_message}
                             </Typography>
-
                         </Grid>
                         <Divider/>
-                        <Grid item xs={6} alignItems={'center'} justifyContent={'center'} sx={{textAlign:'center'}}>
-                            <Typography variant='h5' style={{color:'rgb(63, 35, 5)'}}>
+                        <Grid 
+                            item 
+                            xs={6} 
+                            alignItems={'center'} 
+                            justifyContent={'center'} 
+                            sx={{textAlign:'center'}}>
+                            <Typography 
+                                variant='h5' 
+                                style={{color:'rgb(63, 35, 5)'}}
+                                >
                                 Stocked Plants
                             </Typography>
                             <Divider/>
                             {produceStockedList(stockedPlantNames)}
                         </Grid>
-                        <Grid item xs={6} alignItems='center' justifyContent={'center'} sx={{textAlign:'center'}}>
+                        <Grid 
+                            item 
+                            xs={6} 
+                            alignItems='center' 
+                            justifyContent={'center'} 
+                            sx={{textAlign:'center'}}>
                             <Typography variant='h5' style={{color:'rgb(63, 35, 5)'}}>
                                 Stocked Fish
                             </Typography>
@@ -103,7 +131,13 @@ function ResultsMessage({
                             {produceStockedList(stockedFishNames)}
                         </Grid>
                     </Grid>
-                    <Typography fontSize={'2vh'} sx={{textAlign:'center', color:'rgb(20, 99, 142)'}}>
+                    <Typography 
+                        fontSize={'2vh'} 
+                        sx={{
+                            textAlign:'center', 
+                            color:'rgb(20, 99, 142)'
+                        }}
+                        >
                         Tank Size: {tank.size} Gal
                     </Typography>
                 </DialogContentText>

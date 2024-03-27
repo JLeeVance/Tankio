@@ -13,7 +13,6 @@ function LogInHome({ updateUser }){
                 left:'1vw',
                 right:'1vw',
                 marginTop:'3%',
-                backgroundColor:'rgba(249, 247, 240, .5)',
                 padding:'1%'
                 }}
                 >

@@ -23,25 +23,78 @@ function EditAccount({ user , onSuccess, onFail }){
     return (
     <>
         <FormControl>
-            <FormLabel id='manage-account-radio' sx={{textAlign:'center', marginBottom:'1%', marginTop:'2%', color:'rgba(7, 42, 64, .7)'}}>What would you like to change?</FormLabel>
+            <FormLabel 
+                id='manage-account-radio' 
+                sx={{
+                    textAlign:'center', 
+                    marginBottom:'1%', 
+                    marginTop:'2%', 
+                    color:'rgba(7, 42, 64, .7)'
+                    }}
+                >
+                What would you like to change?
+            </FormLabel>
             <RadioGroup
                 row
                 name='manage-account-radio'
-                sx={{textAlign:'center', justifyContent:'space-evenly'}}
+                sx={{
+                    textAlign:'center', 
+                    justifyContent:'space-evenly'
+                }}
                 onChange={(e) => handleEditSelection(e)}
             >
-                <FormControlLabel as={'h1'} value='first_name' control={<Radio />} label='First Name' />
-                <FormControlLabel as={'h1'} value='last_name' control={<Radio />} label='Last Name' />
-                <FormControlLabel as={'h1'} value='username' control={<Radio />} label='Username' />
-                <FormControlLabel as={'h1'} value='password' control={<Radio />} label='Password' />
-                <FormControlLabel as={'h1'} value='bio' control={<Radio />} label='Bio' />
+                <FormControlLabel 
+                    as={'h1'} 
+                    value='first_name' 
+                    label='First Name'
+                    control={<Radio />} 
+                    />
+                <FormControlLabel 
+                    as={'h1'} 
+                    value='last_name' 
+                    label='Last Name' 
+                    control={<Radio />} 
+                    />
+                <FormControlLabel 
+                    as={'h1'} 
+                    value='username' 
+                    control={<Radio />} 
+                    label='Username' 
+                    />
+                <FormControlLabel 
+                    as={'h1'} 
+                    value='password' 
+                    label='Password' 
+                    control={<Radio />} 
+                    />
+                <FormControlLabel 
+                    as={'h1'} 
+                    value='bio' 
+                    label='Bio' 
+                    control={<Radio />} 
+                    />
             </RadioGroup>
         </FormControl>
-         {editValue === 'first_name' && <EditFirst id={user.id} onSuccess={onSuccess} onFail={onFail}/>}
-         {editValue === 'last_name' && <EditLast id={user.id} onSuccess={onSuccess} onFail={onFail}/>}
-         {editValue === 'password' && <EditPassword user={user} onSuccess={onSuccess} onFail={onFail}/>}
-         {editValue === 'username' && <EditUsername id={user.id} onSuccess={onSuccess} onFail={onFail}/>}
-         {editValue === 'bio' && <EditBio id={user.id} onSuccess={onSuccess} onFail={onFail} />}
+         {editValue === 'first_name' && <EditFirst 
+                                            id={user.id} 
+                                            onSuccess={onSuccess} 
+                                            onFail={onFail}/>}
+         {editValue === 'last_name' && <EditLast 
+                                            id={user.id} 
+                                            onSuccess={onSuccess} 
+                                            onFail={onFail}/>}
+         {editValue === 'password' && <EditPassword 
+                                            user={user} 
+                                            onSuccess={onSuccess} 
+                                            onFail={onFail}/>}
+         {editValue === 'username' && <EditUsername 
+                                            id={user.id} 
+                                            onSuccess={onSuccess} 
+                                            onFail={onFail}/>}
+         {editValue === 'bio' && <EditBio 
+                                        id={user.id} 
+                                        onSuccess={onSuccess} 
+                                        onFail={onFail}/>}
     </>
     )
 

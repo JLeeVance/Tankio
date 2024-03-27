@@ -55,7 +55,6 @@ function FishByID(){
                     left:'1vw',
                     right:'1vw',
                     marginTop:'3%',
-                    backgroundColor:'rgba(249, 247, 240, .2)',
                     justifyContent:'center'
                 }}>
                 <Grid item xs={12} sx={{textAlign:'right'}}>
@@ -80,8 +79,18 @@ function FishByID(){
                 </Grid>
                 <Grid item xs={12} width={'100%'}>
                     <Grid container>
-                        <Grid item xs={5} style={{height:'50vh', padding:'.25%'}}>
-                            <img src={singleFish.image} height={'100%'} width={'100%'}/>
+                        <Grid 
+                            item 
+                            xs={5} 
+                            style={{
+                                height:'50vh', 
+                                padding:'.25%'
+                                }}>
+                            <img 
+                                src={singleFish.image}
+                                alt={singleFish.common_name} 
+                                height={'100%'} 
+                                width={'100%'}/>
                         </Grid>
                         <Grid item xs={7} style={{height:'48vh'}}>
                             <Grid 
@@ -218,8 +227,14 @@ function FishByID(){
                     </Grid>
                 </Grid>
                 <Grid item xs={12} style={{ textAlign:'center' }}>
-                    <Box bgcolor={'rgba(249, 247, 240, .4)'} padding={'2%'}>
-                        <Typography variant='body1' fontSize={'1.6vh'} sx={{color:'rgb(63, 35, 5)'}}>
+                    <Box padding={'2%'}>
+                        <Typography 
+                            variant='body1' 
+                            fontSize={'1.6vh'} 
+                            sx={{
+                                color:'rgb(63, 35, 5)'
+                            }
+                            }>
                             {singleFish.bio}
                         </Typography>
                     </Box>
