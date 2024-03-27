@@ -15,6 +15,7 @@ import {
 
 function Home(){
 
+    console.log('hit')
     const { user , setUser} = useContext(UserContext)
     const { ownedPlants , setOwnedPlants } = useContext(OwnedPlantsContext)
     const { ownedFish , setOwnedFish } = useContext(OwnedFishContext)
@@ -29,7 +30,7 @@ function Home(){
     }, [user])
 
     const userPlants = ownedPlants.map(plant => plant.plant)
-    console.log(userPlants)
+  
     const userFish = ownedFish.map(fish => fish.fish)
     
     let totalPlants = userPlants.length
@@ -98,7 +99,6 @@ function Home(){
             left:'1vw',
             right:'1vw',
             marginTop:'3%',
-            backgroundColor:'rgba(249, 247, 240, .4)',
             padding:'1%'
             }}
             >
@@ -143,7 +143,13 @@ function Home(){
                         {user.bio === null ? 'add a bio' : user.bio}
                     </Typography>
                 </Container>
-                <Divider width={'98%'} style={{marginBottom:'4%', backgroundColor: 'rgb(63, 35, 5)', height: '1.75px' }}/>
+                <Divider 
+                    width={'98%'} 
+                    style={{
+                        marginBottom:'4%', 
+                        backgroundColor: 'rgb(63, 35, 5)', 
+                        height: '1.75px'
+                        }}/>
                 <Typography 
                     variant='overline' 
                     fontSize={'1.5vh'}
@@ -158,7 +164,13 @@ function Home(){
                     >
                     Total Plants: {totalPlants}
                 </Typography>
-                <Divider width={'98%'} style={{marginBottom:'4%', backgroundColor: 'rgb(63, 35, 5)', height: '.25px' }}/>
+                <Divider 
+                    width={'98%'} 
+                    style={{
+                        marginBottom:'4%', 
+                        backgroundColor: 'rgb(63, 35, 5)', 
+                        height: '.25px' 
+                        }}/>
   
                 <Button 
                     onClick={handleEditClick} 
@@ -219,7 +231,7 @@ function Home(){
                             marginBottom:'1%', 
                             color:'rgb(63, 35, 5)',
                             }}
-                            >
+                        >
                         Your Plants
                     </Typography>
                     <Grid 
@@ -245,8 +257,7 @@ function Home(){
                 anchorOrigin={{
                     vertical: 'top', 
                     horizontal: 'right'
-                }}
-                />
+                }}/>
     </Grid>
     )
 

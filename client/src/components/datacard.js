@@ -57,7 +57,7 @@ export function DataCard({
                         variant='inherit' 
                         component='div'
                         align='left'
-                        fontSize={'4vh'}
+                        fontSize={'3vh'}
                         style={{color:'rgb(63, 35, 5, .8)'}}
                         >
                             {common}

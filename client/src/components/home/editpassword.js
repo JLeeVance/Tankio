@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import {
     FormControl,
-    Button,
     TextField,
     Typography,
     IconButton
@@ -83,7 +82,16 @@ function EditPassword({ user, onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={passformik.handleSubmit}
                 >
-                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>New Password</Typography>
+                <Typography 
+                    variant='h1' 
+                    sx={{
+                        textDecoration:'underline', 
+                        fontSize:'2.5vh', 
+                        paddingBottom:'2%'
+                        }}
+                    >
+                    New Password
+                </Typography>
                 <TextField
                     required
                 
@@ -92,7 +100,15 @@ function EditPassword({ user, onSuccess, onFail }){
                     onChange={passformik.handleChange}
                     value={passformik.values.password}
                     />
-                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
+                <IconButton 
+                    type='submit' 
+                    style={{
+                        fontSize:'2.5vh', 
+                        paddingBottom:'2%'
+                        }}
+                    >
+                    Submit
+                </IconButton>
             </FormControl> 
             :
             <FormControl
@@ -102,7 +118,16 @@ function EditPassword({ user, onSuccess, onFail }){
                 autoComplete='off'
                 onSubmit={authformik.handleSubmit}
                 >
-                <Typography variant='h1' sx={{textDecoration:'underline', fontSize:'2.5vh', paddingBottom:'2%'}}>Current Password</Typography>
+                <Typography 
+                    variant='h1' 
+                    sx={{
+                        textDecoration:'underline', 
+                        fontSize:'2.5vh', 
+                        paddingBottom:'2%'
+                        }}
+                    >
+                    Current Password
+                </Typography>
                 <TextField
                     required
                     
@@ -111,7 +136,15 @@ function EditPassword({ user, onSuccess, onFail }){
                     onChange={authformik.handleChange}
                     value={authformik.values.password}
                     />
-                <IconButton type='submit' style={{fontSize:'2.5vh', paddingBottom:'2%'}}>Submit</IconButton>
+                <IconButton 
+                    type='submit' 
+                    style={{
+                        fontSize:'2.5vh', 
+                        paddingBottom:'2%'
+                        }}
+                    >
+                    Submit
+                </IconButton>
             </FormControl>
             }
         </>
